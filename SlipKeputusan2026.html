@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<title>Slip Keputusan SM Imtiaz Dungun</title>
+<title>Slip Keputusan SM Imtiaz YT Dungun</title>
 <meta name="theme-color" content="#7b1730">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -156,6 +156,9 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 .tbl td .input.w-s { width: 84px; }
 .tbl td .input.w-m { width: 130px; }
 .tbl td .input.w-l { min-width: 220px; }
+.tbl td .input.w-xl { min-width: 420px; }
+.tbl td textarea.g-area { min-width: 260px; height: auto; min-height: 64px; padding: 6px 8px; line-height: 1.35; resize: vertical; font: inherit; font-size: 13px; }
+.tbl td textarea.g-area.w-xl { min-width: 420px; }
 .empty { padding: 44px 18px; text-align: center; color: var(--muted); }
 .empty svg.i { width: 40px; height: 40px; color: var(--line-2); margin-bottom: 8px; }
 .pager { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 18px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
@@ -168,7 +171,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 .badge.warn { background: var(--warn-soft); color: var(--warn); }
 .badge.danger { background: var(--danger-soft); color: var(--danger); }
 
-.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); padding: 0 12px; overflow-x: auto; }
+.tabs { display: flex; flex-wrap: wrap; gap: 0 4px; border-bottom: 1px solid var(--line); padding: 0 12px; }
 .tabs button { background: none; border: 0; border-bottom: 3px solid transparent; padding: 12px 12px 10px; font: 600 13.5px var(--font); color: var(--muted); cursor: pointer; white-space: nowrap; }
 .tabs button:hover { color: var(--ink); }
 .tabs button.active { color: var(--maroon); border-bottom-color: var(--maroon); }
@@ -262,6 +265,15 @@ table.slip-tbl { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
 .slip-summary .v { font-size: 12pt; font-weight: 800; color: var(--ink); }
 .slip-note { font-size: 8.5pt; color: #444; margin-top: 6px; }
 .slip-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; font-size: 8pt; color: #333; margin-top: 6px; }
+.pbd-tbl { font-size: 8.2pt; }
+.pbd-tbl td { line-height: 1.25; padding: 3px 5px; }
+.pbd-tbl th { font-size: 8pt; padding: 4px 5px; }
+.pbd-tbl td.pbd-txt { text-align: left; hyphens: auto; }
+.pbd-tbl tr { page-break-inside: avoid; break-inside: avoid; }
+.pbd-box { margin-top: 8px; border: 1px solid #999; border-left: 4px solid var(--maroon); padding: 6px 9px; font-size: 9pt; line-height: 1.35; break-inside: avoid; }
+.pbd-legend { display: grid; grid-template-columns: 1fr 1.3fr; gap: 0 14px; font-size: 7.8pt; color: #333; margin-top: 8px; break-inside: avoid; }
+.pbd-legend .lh { font-weight: 800; color: var(--maroon); text-transform: uppercase; margin-bottom: 2px; }
+.slip-pbd thead { display: table-header-group; }
 .slip-foot { margin-top: auto; padding-top: 8px; }
 .slip-sign { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 8px; font-size: 9.5pt; }
 .slip-sign .line { border-top: 1px dotted #333; padding-top: 4px; margin-top: 30px; }
@@ -271,7 +283,10 @@ table.slip-tbl { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
 .sk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5mm; align-items: start; }
 .sk-box { min-width: 0; }
 .slip-all h4 { margin-top: 9px; }
-.slip-all .slip-tbl td { padding: 2px 6px; }
+.slip-all .slip-tbl { font-size: 9pt; }
+.slip-all .slip-tbl td { padding: 1.5px 6px; line-height: 1.22; }
+.slip-all .slip-tbl th { padding: 3.5px 6px; font-size: 8.5pt; }
+.slip-all { padding-top: 8mm; padding-bottom: 7mm; }
 .slip-all .slip-sign { margin-top: 4px; }
 .slip-all .slip-sign .line { margin-top: 20px; }
 .slip-all .slip-meta { margin-top: 6px; }
@@ -318,6 +333,17 @@ table.slip-tbl { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
   #print-root .slip:last-child { page-break-after: auto; break-after: auto; }
   .slip-tbl tr { page-break-inside: avoid; }
 }
+.slip-tbl td .sm { font-size: 7pt; line-height: 1.1; font-weight: 700; color: #333; }
+.slip-all .sk-grid { grid-template-columns: 1fr 1.15fr; }
+.slip-sign .sign-p .line { position: relative; }
+.slip-sign .sign-p .ttd { position: absolute; left: 0; bottom: calc(100% + 0.5mm); height: 12mm; max-width: 42mm; object-fit: contain; object-position: left bottom; pointer-events: none; }
+.slip-sign .line, .slip-all .slip-sign .line { margin-top: 13mm; }
+.ttd-prev { height: 56px; min-width: 120px; border: 1px solid var(--line); border-radius: 8px; display: grid; place-items: center; padding: 4px 8px; background: #fff; }
+.ttd-prev img { max-height: 48px; max-width: 160px; }
+.slip-sign .sign-p { position: relative; }
+.slip-sign .sign-p .cop { position: absolute; left: 44mm; bottom: 0; width: 23mm; height: 23mm; object-fit: contain; opacity: .92; pointer-events: none; z-index: 1; }
+.sk-split { display: grid; grid-template-columns: 1fr 34mm; gap: 0 5mm; align-items: start; }
+.sk-split .sk-box { min-width: 0; }
 
 :root { color-scheme: light; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 45; background: var(--maroon); }
@@ -399,7 +425,185 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     },
   });
   window.__STANDALONE = true;
-  window.claude = Object.freeze({ use: async (n) => ({ db, user, downloads })[n] || null });
+
+  /* Versi DATA TERBENAM: fail mengandungi `const students = [...]` (+ SCHOOL_CONFIG, DATA_STAMP).
+     Data dimuatkan terus ke dalam memori setiap kali fail dibuka - tidak bergantung pada localStorage.
+     localStorage hanya menyimpan suntingan; jika fail diganti dengan versi baharu (DATA_STAMP berbeza),
+     data dalam fail digunakan semula. */
+  const EMBED = (typeof students !== 'undefined' && Array.isArray(students)) ? students : null; // eslint-disable-line no-undef
+  if (EMBED && !window.__SEED_ENC) {
+    const STAMP_KEY = 'slip2026_embed_stamp';
+    const stamp = (typeof DATA_STAMP !== 'undefined') ? DATA_STAMP : ''; // eslint-disable-line no-undef
+    let same = false;
+    try { same = localStorage.getItem(STAMP_KEY) === stamp; } catch (x) { /* storan disekat */ }
+    if (!same || !Object.keys(data).some((k) => k.startsWith('students/'))) {
+      for (const k of Object.keys(data)) delete data[k];
+      const cfg = (typeof SCHOOL_CONFIG !== 'undefined') ? SCHOOL_CONFIG : {}; // eslint-disable-line no-undef
+      if (cfg.settings) data['config/settings'] = clone(cfg.settings);
+      if (cfg.components) data['config/components'] = { list: clone(cfg.components) };
+      if (cfg.subjects) data['config/subjects'] = { list: clone(cfg.subjects) };
+      for (const s of EMBED) { const { id, ...doc } = s; data['students/' + id] = clone(doc); }
+      try { localStorage.setItem(KEY, JSON.stringify(data)); localStorage.setItem(STAMP_KEY, stamp); } catch (x) { /* data tetap dalam memori */ }
+    }
+  }
+
+  /* Versi GitHub: data asal disimpan DISULITKAN dalam fail (AES-256-GCM, kunci PBKDF2-SHA256).
+     Halaman meminta kata laluan; data hanya dinyahsulit dalam pelayar pengguna. */
+  const SEED = window.__SEED_ENC || null;
+  let unlockResolve;
+  const unlocked = SEED ? new Promise((r) => { unlockResolve = r; }) : Promise.resolve();
+  if (SEED) {
+    const STAMP_KEY = 'slip2026_seed_stamp';
+    const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+    async function decrypt(pw) {
+      const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
+      const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(SEED.salt), iterations: SEED.iter, hash: 'SHA-256' },
+        base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+      const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(SEED.iv) }, key, b64(SEED.data));
+      return JSON.parse(new TextDecoder().decode(plain));
+    }
+    const PUB = window.__SLIP_PUB || null;
+    const gate = document.createElement('div');
+    gate.id = 'seed-gate';
+    gate.innerHTML = `<style>
+      #seed-gate{position:fixed;inset:0;z-index:500;overflow:auto;background:linear-gradient(170deg,#7b1730 0,#5c0f22 300px,#f6f7f9 300.5px);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;color:#1f2937}
+      #seed-gate .g-hero{text-align:center;color:#fff;padding:28px 16px 18px}
+      #seed-gate .g-hero .crest{display:inline-block;height:auto;width:auto;overflow:visible;background:#fff;border-radius:12px;padding:8px 14px;margin-bottom:10px}
+      #seed-gate .g-hero .crest img{width:150px;height:auto;max-height:none;display:block}
+      #seed-gate .g-hero h1{font-size:20px;margin:0;font-weight:800;letter-spacing:.3px}
+      #seed-gate .g-hero p{margin:4px 0 0;font-size:13px;opacity:.85}
+      #seed-gate .g-wrap{max-width:440px;margin:0 auto;padding:0 16px 32px}
+      #seed-gate .g-wrap.wide{max-width:1080px}
+      #seed-gate .box{background:#fff;border-radius:14px;box-shadow:0 12px 32px rgba(16,24,40,.16);padding:22px 20px}
+      #seed-gate .choice{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;font:inherit;color:inherit}
+      #seed-gate .choice:hover,#seed-gate .choice:focus-visible{border-color:#7b1730;outline:none}
+      #seed-gate .choice .ic{flex:none;width:46px;height:46px;border-radius:10px;display:grid;place-items:center;background:#f9eef1;color:#7b1730}
+      #seed-gate .choice .ic svg{width:24px;height:24px}
+      #seed-gate .choice b{display:block;font-size:16px}
+      #seed-gate .choice span{font-size:12.5px;color:#6b7280}
+      #seed-gate h2{font-size:17px;color:#7b1730;margin:0 0 4px;font-weight:800}
+      #seed-gate .lead{color:#6b7280;font-size:13px;margin:0 0 14px}
+      #seed-gate input{width:100%;height:48px;border:2px solid #d3d7de;border-radius:8px;padding:0 12px;font-size:17px;box-sizing:border-box;font-family:inherit}
+      #seed-gate input.ic{text-align:center;letter-spacing:1.5px;font-weight:600}
+      #seed-gate input:focus{outline:none;border-color:#7b1730}
+      #seed-gate .go{width:100%;height:48px;margin-top:12px;border:0;border-radius:8px;background:#7b1730;color:#fff;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit}
+      #seed-gate .go:disabled{opacity:.6}
+      #seed-gate .back{background:none;border:0;color:#7b1730;font-weight:600;cursor:pointer;padding:0;margin-bottom:12px;font:inherit;font-size:13.5px}
+      #seed-gate .err{color:#b42318;font-size:13px;min-height:18px;margin-top:10px}
+      #seed-gate .note{font-size:11.5px;color:#6b7280;margin-top:12px;line-height:1.5}
+      #seed-gate .r-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+      #seed-gate .r-head b{font-size:17px;display:block}
+      #seed-gate .r-head .muted{font-size:12.5px;color:#6b7280}
+      #seed-gate .r-btns{display:flex;gap:8px;flex-wrap:wrap}
+      #seed-gate .r-btns button{height:40px;padding:0 14px;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:14px;border:1px solid #d3d7de;background:#fff;color:#1f2937}
+      #seed-gate .r-btns button.pri{background:#7b1730;border-color:#7b1730;color:#fff}
+      #seed-gate .hidden{display:none!important}
+      @media (max-width:600px){#seed-gate .box{padding:18px 14px}#seed-gate .g-wrap{padding:0 10px 24px}}
+      @media print{#seed-gate{display:none}}</style>
+      <header class="g-hero"><div class="crest" id="g-crest"></div><h1 id="g-sekolah">SM IMTIAZ YT DUNGUN</h1><p id="g-tajuk">SLIP KEPUTUSAN AKHIR TAHUN 2026</p></header>
+      <div class="g-wrap" id="g-wrap">
+        <div id="v-home">
+          <button type="button" class="choice" id="c-pel"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><b>Pelajar / Ibu Bapa</b><span>Semak keputusan menggunakan No. Kad Pengenalan pelajar</span></div></button>
+          <button type="button" class="choice" id="c-adm"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div><b>Pentadbir (Admin)</b><span>Akses penuh sistem dengan kata laluan</span></div></button>
+        </div>
+        <form class="box hidden" id="v-pel" autocomplete="off"><button type="button" class="back" data-back>&larr; Kembali</button>
+          <h2>Semakan Keputusan Pelajar</h2><p class="lead">Masukkan nombor kad pengenalan pelajar.</p>
+          <input class="ic" id="pel-ic" inputmode="numeric" placeholder="000000-00-0000" maxlength="14"><button type="submit" class="go" id="pel-go">SEMAK KEPUTUSAN</button>
+          <div class="err" id="pel-err"></div><div class="note">Contoh: 130512-11-1234. Tanda sempang (-) tidak wajib.</div></form>
+        <form class="box hidden" id="v-adm" autocomplete="off"><button type="button" class="back" data-back>&larr; Kembali</button>
+          <h2>Log Masuk Pentadbir</h2><p class="lead">Masukkan kata laluan pentadbir.</p>
+          <input type="password" id="seed-pw" placeholder="Kata laluan" autocomplete="current-password"><button type="submit" class="go" id="seed-go">Log Masuk</button>
+          <div class="err" id="seed-err"></div><div class="note">Data dinyahsulit dalam pelayar ini sahaja.</div></form>
+        <section class="box hidden" id="v-res">
+          <div class="r-head"><div><span class="muted">Keputusan untuk</span><b id="r-nama"></b><span class="muted" id="r-info"></span></div>
+            <div class="r-btns"><button type="button" id="r-baru">&larr; Semakan Baharu</button><button type="button" class="pri" id="r-print">Cetak Slip</button></div></div>
+          <div class="tabs" id="r-tabs" role="tablist"></div><div class="slip-stage" id="r-slip"></div>
+        </section>
+      </div>`;
+    const $g = (id) => gate.querySelector('#' + id);
+    const show = (v) => {
+      ['v-home', 'v-pel', 'v-adm', 'v-res'].forEach((x) => $g(x).classList.toggle('hidden', x !== v));
+      $g('g-wrap').classList.toggle('wide', v === 'v-res');
+      const f = { 'v-pel': 'pel-ic', 'v-adm': 'seed-pw' }[v];
+      if (f) setTimeout(() => $g(f).focus(), 30);
+    };
+    const mount = () => {
+      document.body.appendChild(gate);
+      const s = (PUB && PUB.settings) || {};
+      if (window.Shared) $g('g-crest').innerHTML = Shared.crestHTML(s.logo);
+      else $g('g-crest').remove();
+      if (s.nama_sekolah) $g('g-sekolah').textContent = s.nama_sekolah;
+      if (s.tajuk_slip) $g('g-tajuk').textContent = s.tajuk_slip;
+      if (!PUB) $g('c-pel').remove();
+    };
+    if (document.readyState === 'complete') mount(); else window.addEventListener('load', mount);
+    gate.querySelectorAll('[data-back]').forEach((b) => b.addEventListener('click', () => show('v-home')));
+    $g('c-pel').addEventListener('click', () => show('v-pel'));
+    $g('c-adm').addEventListener('click', () => show('v-adm'));
+
+    // ---- Pelajar / ibu bapa: hanya slip sendiri (dinyahsulit dengan No. KP)
+    let slip = null; let cur = 'keseluruhan';
+    $g('pel-ic').addEventListener('input', (e) => {
+      const d = e.target.value.replace(/\D/g, '').slice(0, 12);
+      e.target.value = [d.slice(0, 6), d.slice(6, 8), d.slice(8)].filter(Boolean).join('-');
+    });
+    const renderRes = () => {
+      const S = window.Shared; const p = slip.pelajar;
+      $g('r-nama').textContent = p.nama;
+      $g('r-info').textContent = `No. KP ${S.fmtIC(p.ic)} · Tingkatan ${p.tingkatan}${p.kelas ? ' ' + p.kelas : ''} · Tahun ${p.tahun}`;
+      $g('r-tabs').innerHTML = S.slipTypes(slip).map((t) => `<button type="button" role="tab" data-t="${t.id}" class="${t.id === cur ? 'active' : ''}">${S.esc(t.label)}</button>`).join('');
+      $g('r-slip').innerHTML = S.renderSlip(PUB.settings, slip, cur);
+      S.fitSlips($g('r-slip'));
+    };
+    $g('r-tabs').addEventListener('click', (e) => { const b = e.target.closest('button[data-t]'); if (b) { cur = b.dataset.t; renderRes(); } });
+    $g('r-print').addEventListener('click', () => Shared.printHTML(Shared.renderSlip(PUB.settings, slip, cur)));
+    $g('r-baru').addEventListener('click', () => { slip = null; $g('pel-ic').value = ''; $g('r-slip').innerHTML = ''; show('v-pel'); });
+    $g('v-pel').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const ic = $g('pel-ic').value.replace(/\D/g, ''); const err = $g('pel-err'); const btn = $g('pel-go');
+      if (ic.length !== 12) { err.textContent = 'Nombor kad pengenalan mesti mengandungi 12 digit.'; return; }
+      btn.disabled = true; btn.textContent = 'Sedang menyemak...'; err.textContent = '';
+      try {
+        const base = await crypto.subtle.importKey('raw', new TextEncoder().encode('slip2026:' + ic), 'PBKDF2', false, ['deriveBits']);
+        const bits = new Uint8Array(await crypto.subtle.deriveBits({ name: 'PBKDF2', salt: b64(PUB.salt), iterations: PUB.iter, hash: 'SHA-256' }, base, 384));
+        const hex = [...bits.slice(32)].map((x) => x.toString(16).padStart(2, '0')).join('');
+        const ent = PUB.entries[hex];
+        if (!ent) throw new Error('Tiada rekod dijumpai bagi No. Kad Pengenalan ini.');
+        const [iv, ct] = ent.split('.');
+        const k = await crypto.subtle.importKey('raw', bits.slice(0, 32), 'AES-GCM', false, ['decrypt']);
+        slip = JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(iv) }, k, b64(ct))));
+        if (slip.pelajar.__gk) slip.pelajar.ttd_guru = PUB.ttd[slip.pelajar.__gk] || '';
+        cur = 'keseluruhan'; show('v-res'); renderRes();
+      } catch (x) {
+        err.textContent = x && x.message && x.message.startsWith('Tiada') ? x.message : 'Tiada rekod dijumpai bagi No. Kad Pengenalan ini.';
+      } finally { btn.disabled = false; btn.textContent = 'SEMAK KEPUTUSAN'; }
+    });
+
+    // ---- Pentadbir: buka semua data
+    $g('v-adm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = $g('seed-go'); const err = $g('seed-err');
+      btn.disabled = true; btn.textContent = 'Membuka...'; err.textContent = '';
+      try {
+        const seed = await decrypt($g('seed-pw').value);
+        let sameSeed = false;
+        try { sameSeed = localStorage.getItem(STAMP_KEY) === SEED.stamp; } catch (x) { /* abaikan */ }
+        // Gunakan data dalam pelayar jika ia berasal daripada fail yang sama (termasuk suntingan);
+        // jika fail dikemas kini (stamp baharu), muat data asal fail.
+        if (!sameSeed || !Object.keys(data).some((k) => k.startsWith('students/'))) {
+          for (const k of Object.keys(data)) delete data[k];
+          for (const [k, v] of Object.entries(seed)) data[k] = v;
+          try { localStorage.setItem(KEY, JSON.stringify(data)); localStorage.setItem(STAMP_KEY, SEED.stamp); } catch (x) { /* storan disekat */ }
+        }
+        gate.remove();
+        unlockResolve();
+      } catch (x) {
+        err.textContent = 'Kata laluan salah. Sila cuba lagi.';
+        btn.disabled = false; btn.textContent = 'Log Masuk';
+      }
+    });
+  }
+  window.claude = Object.freeze({ use: async (n) => { await unlocked; return ({ db, user, downloads })[n] || null; } });
 })();
 
 </script>
@@ -411,9 +615,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <div class="school-head">
         <div class="crest" id="top-crest"></div>
         <div style="min-width:0">
-          <div class="t1" id="top-sekolah">SM IMTIAZ DUNGUN</div>
+          <div class="t1" id="top-sekolah">SM IMTIAZ YT DUNGUN</div>
           <div class="t2" id="top-tajuk">SLIP KEPUTUSAN AKHIR TAHUN 2026</div>
-          <div class="t3" id="top-penaung">YAYASAN TERENGGANU</div>
+          <div class="t3" id="top-penaung">JALAN SURA JETI 23000</div>
         </div>
       </div>
       <div class="spacer"></div>
@@ -521,7 +725,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     bahasa: { tajuk: 'Kemahiran Berbahasa', slip: 'KEPUTUSAN KEMAHIRAN BERBAHASA', icon: 'chat', komponen: 'Komponen Kemahiran',
       fields: [['nilai', 'Tahap / Markah', 'w-m'], ['catatan', 'Catatan', 'w-l']] },
     segak: { tajuk: 'SEGAK', slip: 'STANDARD KECERGASAN FIZIKAL KEBANGSAAN (SEGAK)', icon: 'activity', komponen: 'Komponen Ujian',
-      fields: [['nilai', 'Markah / Pencapaian', 'w-m'], ['gred', 'Gred / Tahap', 'w-s'], ['catatan', 'Catatan', 'w-l']] },
+      fields: [['nilai1', 'Ujian 1: Markah', 'w-s'], ['gred1', 'Ujian 1: Gred / Status', 'w-m'], ['nilai', 'Ujian 2: Markah', 'w-s'], ['gred', 'Ujian 2: Gred / Status', 'w-m'], ['catatan', 'Catatan', 'w-l']] },
     psiko: { tajuk: 'Psikometrik', slip: 'LAPORAN UJIAN PSIKOMETRIK', icon: 'brain', komponen: 'Jenis Instrumen',
       fields: [['nilai', 'Keputusan / Profil', 'w-m'], ['dapatan', 'Dapatan Penilaian', 'w-l'], ['catatan', 'Catatan', 'w-l']], sulit: true },
     tcs: { tajuk: 'TCS', slip: 'KEPUTUSAN TCS', icon: 'award', komponen: 'Komponen TCS',
@@ -534,14 +738,14 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     6: 'Tahu, Faham dan Boleh Buat dengan Beradab Mithali',
   };
 
+  /* Tingkatan 4 menduduki TCS; Tingkatan 1-3 menduduki UASA */
+  const examName = (data) => (Number(data.pelajar.tingkatan) === 4 ? 'TCS' : 'UASA');
   /* Senarai slip yang layak bagi seorang pelajar */
   function slipTypes(data) {
-    const t = [{ id: 'uasa', label: 'UASA & PBD' }];
+    const t = [{ id: 'keseluruhan', label: 'Slip Keseluruhan (1 helai)' }, { id: 'uasa', label: examName(data) === 'TCS' ? 'Keputusan TCS' : 'UASA' }, { id: 'pbd', label: 'Pentaksiran (PBD)' }];
     if (data.modul.bahasa) t.push({ id: 'bahasa', label: 'Kemahiran Berbahasa' });
     if (data.modul.segak) t.push({ id: 'segak', label: 'SEGAK' });
     if (data.modul.psiko) t.push({ id: 'psiko', label: 'Psikometrik' });
-    if (data.modul.tcs && data.pelajar.tingkatan === 4) t.push({ id: 'tcs', label: 'TCS' });
-    t.push({ id: 'keseluruhan', label: 'Slip Keseluruhan' });
     return t;
   }
 
@@ -552,8 +756,8 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
       <header class="slip-header">
         <div class="crest">${crestHTML(s.logo)}</div>
         <div class="txt">
-          <div class="s1">${esc(s.nama_sekolah || 'SM IMTIAZ DUNGUN')}</div>
-          <div class="s2">${esc(s.penaung || 'YAYASAN TERENGGANU')}</div>
+          <div class="s1">${esc(s.nama_sekolah || 'SM IMTIAZ YT DUNGUN')}</div>
+          <div class="s2">${esc(s.penaung || 'JALAN SURA JETI 23000')}</div>
           <div class="s3">${esc(s.alamat || '')}</div>
         </div>
         <div class="spacer"></div>
@@ -572,19 +776,29 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
       ${body}
       <footer class="slip-foot">
         <div class="slip-sign">
-          <div><div class="line">Tandatangan Guru Kelas</div></div>
-          <div><div class="line">Tandatangan Pengetua${s.nama_pengetua ? `<br><b>${esc(s.nama_pengetua)}</b>` : ''}</div></div>
+          <div class="sign-p"><div class="line">${p.ttd_guru ? `<img class="ttd" src="${esc(p.ttd_guru)}" alt="Tandatangan Guru Kelas">` : ''}Tandatangan Guru Kelas${p.guru_kelas ? `<br><b>${esc(p.guru_kelas)}</b>` : ''}</div></div>
+          <div class="sign-p">${s.cop_sekolah ? `<img class="cop" src="${esc(s.cop_sekolah)}" alt="Cop Rasmi Sekolah">` : ''}<div class="line">${s.ttd_pengetua ? `<img class="ttd" src="${esc(s.ttd_pengetua)}" alt="Tandatangan Pengetua">` : ''}Tandatangan Pengetua${s.nama_pengetua ? `<br><b>${esc(s.nama_pengetua)}</b>` : ''}</div></div>
         </div>
         <div class="slip-meta"><span>Slip ini dijana oleh komputer. ${esc(s.nama_sekolah || '')}</span><span>Dicetak: ${esc(tarikh)}</span></div>
       </footer>
     </article>`;
   }
 
+  /* Ringkasan keputusan UASA (Gred Purata & Keputusan dipaparkan jika ada dalam slip rasmi) */
+  function summaryHTML(s, r, gredStr, showRank, rank) {
+    const cells = [['Bil. Subjek', r.bil_subjek], ['Jumlah Markah', r.purata === null ? '-' : fmtNum(r.jumlah)], ['Purata', r.purata === null ? '-' : fmtNum(r.purata)]];
+    if (r.gred_purata) cells.push(['Gred Purata', r.gred_purata]);
+    cells.push(['Pencapaian Gred', gredStr || '-', true]);
+    if (r.keputusan) cells.push(['Keputusan', r.keputusan]);
+    if (showRank) cells.push(['Kedudukan Kelas', rank('kedudukan_kelas')], ['Kedudukan Tingkatan', rank('kedudukan_tingkatan')]);
+    return `<div class="slip-summary" style="grid-template-columns:repeat(${cells.length},1fr)">
+      ${cells.map(([k, v, small]) => `<div><div class="k">${esc(k)}</div><div class="v"${small || cells.length > 6 ? ' style="font-size:10pt"' : ''}>${esc(String(v))}</div></div>`).join('')}</div>`;
+  }
+
   function slipUASA(s, data) {
     const rows = data.uasa;
     const r = data.ringkasan;
     const anyMark = rows.some((x) => x.markah !== null || x.gred);
-    const anyTP = rows.some((x) => x.tp);
     const tblA = `<table class="slip-tbl"><thead><tr>
         <th style="width:9mm">Bil</th><th style="width:22mm">Kod</th><th>Mata Pelajaran</th>
         <th style="width:20mm">Markah</th><th style="width:16mm">Gred</th><th style="width:44mm">Catatan</th></tr></thead><tbody>
@@ -595,39 +809,46 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     const gredStr = Object.entries(r.gred || {}).map(([g, n]) => `${n}${g}`).join(' ');
     const rank = (k) => (r[k] ? `${r[k].kedudukan} / ${r[k].daripada}` : '-');
     const showRank = s.papar_kedudukan === '1' && (r.kedudukan_kelas || r.kedudukan_tingkatan);
-    const summary = `<div class="slip-summary" style="grid-template-columns:repeat(${showRank ? 6 : 4},1fr)">
-        <div><div class="k">Bil. Subjek</div><div class="v">${r.bil_subjek}</div></div>
-        <div><div class="k">Jumlah Markah</div><div class="v">${anyMark ? esc(fmtNum(r.jumlah)) : '-'}</div></div>
-        <div><div class="k">Purata</div><div class="v">${r.purata === null ? '-' : esc(fmtNum(r.purata))}</div></div>
-        <div><div class="k">Pencapaian Gred</div><div class="v" style="font-size:10pt">${esc(gredStr || '-')}</div></div>
-        ${showRank ? `<div><div class="k">Kedudukan Kelas</div><div class="v">${rank('kedudukan_kelas')}</div></div>
-        <div><div class="k">Kedudukan Tingkatan</div><div class="v">${rank('kedudukan_tingkatan')}</div></div>` : ''}
+    const summary = summaryHTML(s, r, gredStr, showRank, rank);
+    const tcs = examName(data) === 'TCS';
+    const body = `<h4>${tcs ? 'Keputusan TCS' : 'Ujian Akhir Sesi Akademik (UASA)'}</h4>
+      ${anyMark ? tblA + summary : `<div class="slip-empty">Markah ${examName(data)} belum dimasukkan.</div>`}
+      <div class="slip-note">TH = Tidak Hadir</div>`;
+    return slipShell(s, data, tcs ? 'KEPUTUSAN TCS' : 'UJIAN AKHIR SESI AKADEMIK (UASA)', body);
+  }
+
+  const USAHA_DESC = [['RENDAH', 'Murid kurang daya usaha dan memerlukan lebih dorongan'], ['SEDERHANA', 'Murid menunjukkan daya usaha dan memerlukan dorongan/sokongan'],
+    ['TINGGI', 'Murid menunjukkan daya usaha yang tinggi dan memerlukan sokongan untuk terus maju'], ['SANGAT TINGGI', 'Murid menunjukkan daya usaha yang tinggi dan mampu berdikari']];
+  /* SLIP PBD: semua butiran pentaksiran bilik darjah (boleh melebihi satu halaman) */
+  function slipPBD(s, data) {
+    const rows = data.uasa;
+    const p = data.pelajar;
+    const any = rows.some((x) => x.tp || x.penyataan || x.ulasan || x.usaha);
+    const tbl = `<table class="slip-tbl pbd-tbl"><thead><tr><th style="width:7mm">Bil</th><th style="width:27mm">Mata Pelajaran</th><th style="width:11mm">TP</th>
+        <th>Penyataan Tahap Penguasaan</th><th style="width:60mm">Ulasan Guru Mata Pelajaran</th><th style="width:17mm">Usaha Murid</th></tr></thead><tbody>
+      ${rows.map((x, i) => `<tr><td class="c">${i + 1}</td><td><b>${esc(x.kod)}</b>${x.nama && x.nama.toUpperCase() !== x.kod.toUpperCase() ? `<div class="ket">${esc(x.nama)}</div>` : ''}</td>
+        <td class="c b">${x.tp ? 'TP' + x.tp : '-'}</td><td class="pbd-txt">${esc(x.penyataan || '')}</td>
+        <td class="pbd-txt">${esc(x.ulasan || '').replace(/(CADANGAN INTERVENSI:)/g, '<br><b>$1</b>')}</td><td class="c b">${esc(x.usaha || '-')}</td></tr>`).join('')}
+      </tbody></table>`;
+    const body = `<h4>Pentaksiran Bilik Darjah (PBD) – Pentaksiran Berterusan Akhir Sesi Akademik</h4>
+      ${any ? tbl : '<div class="slip-empty">Maklumat PBD belum dimasukkan.</div>'}
+      ${p.ulasan_guru_kelas ? `<div class="pbd-box"><b>ULASAN GURU KELAS:</b> ${esc(p.ulasan_guru_kelas)}</div>` : ''}
+      <div class="pbd-legend">
+        <div><div class="lh">Tahap Penguasaan (TP)</div>${Object.entries(TP_DESC).map(([k, v]) => `<div><b>TP${k}</b> – ${esc(v)}</div>`).join('')}</div>
+        <div><div class="lh">Petunjuk Usaha Murid</div>${USAHA_DESC.map(([k, v]) => `<div><b>${k}</b> – ${esc(v)}</div>`).join('')}</div>
       </div>`;
-    // PBD: dua lajur bersebelahan supaya slip muat satu halaman A4
-    const half = Math.ceil(rows.length / 2);
-    const cellsB = (x, i) => (x ? `<td class="c">${i + 1}</td><td><b>${esc(x.kod)}</b>${x.nama && x.nama.toUpperCase() !== x.kod.toUpperCase() ? ` <span style="color:#444">${esc(x.nama)}</span>` : ''}</td><td class="c b">${x.tp ? 'TP' + x.tp : '-'}</td>` : '<td></td><td></td><td></td>');
-    const tblB = `<table class="slip-tbl"><thead><tr><th style="width:8mm">Bil</th><th>Mata Pelajaran</th><th style="width:14mm">TP</th>
-        <th style="width:8mm;border-left:2px solid #fff">Bil</th><th>Mata Pelajaran</th><th style="width:14mm">TP</th></tr></thead><tbody>
-      ${Array.from({ length: half }, (_, i) => `<tr>${cellsB(rows[i], i)}${cellsB(rows[i + half], i + half).replace('<td', '<td style="border-left:2px solid #555"')}</tr>`).join('')}
-      </tbody></table>
-      <div class="slip-legend">${Object.entries(TP_DESC).map(([k, v]) => `<div><b>TP${k}</b> – ${esc(v)}</div>`).join('')}</div>`;
-    const body = `<h4>Bahagian A: Ujian Akhir Sesi Akademik (UASA)</h4>
-      ${anyMark ? tblA + summary : '<div class="slip-empty">Markah UASA belum dimasukkan.</div>'}
-      <div class="slip-note">TH = Tidak Hadir</div>
-      <h4>Bahagian B: Pentaksiran Bilik Darjah (PBD)</h4>
-      ${anyTP ? tblB : '<div class="slip-empty">Tahap Penguasaan PBD belum dimasukkan.</div>'}`;
-    return slipShell(s, data, 'UJIAN AKHIR SESI AKADEMIK (UASA) & PENTAKSIRAN BILIK DARJAH (PBD)', body);
+    return slipShell(s, data, 'PENTAKSIRAN BILIK DARJAH (PBD)', body).replace('<article class="slip">', '<article class="slip slip-pbd">');
   }
 
   function moduleSection(data, key) {
     const cfg = MODULES[key];
     const rows = data.modul[key] || [];
-    const filled = rows.filter((r) => r.nilai || r.gred || r.dapatan || r.catatan);
+    const filled = rows.filter((r) => r.nilai || r.gred || r.dapatan || r.catatan || r.nilai1 || r.gred1);
     return `<h4>${esc(cfg.tajuk)}</h4>
       ${filled.length ? `<table class="slip-tbl"><thead><tr><th style="width:9mm">Bil</th><th>${esc(cfg.komponen)}</th>
         ${cfg.fields.map(([, l]) => `<th>${esc(l)}</th>`).join('')}</tr></thead><tbody>
         ${rows.map((r, i) => `<tr><td class="c">${i + 1}</td><td class="b">${esc(r.komponen)}${r.keterangan ? `<div class="ket">${esc(r.keterangan)}</div>` : ''}</td>
-          ${cfg.fields.map(([f]) => `<td class="${f === 'nilai' || f === 'gred' ? 'c b' : ''}">${esc(r[f] || (f === 'nilai' ? '-' : ''))}</td>`).join('')}</tr>`).join('')}
+          ${cfg.fields.map(([f]) => `<td class="${/^(nilai|gred)1?$/.test(f) ? 'c b' : ''}">${esc(r[f] || (/^nilai1?$/.test(f) ? '-' : ''))}</td>`).join('')}</tr>`).join('')}
         </tbody></table>` : `<div class="slip-empty">Keputusan ${esc(cfg.tajuk)} belum dimasukkan.</div>`}
       ${cfg.sulit ? '<div class="slip-note"><b>SULIT:</b> Maklumat ini adalah untuk kegunaan pelajar dan ibu bapa/penjaga sahaja.</div>' : ''}`;
   }
@@ -645,48 +866,50 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     const gredStr = Object.entries(r.gred || {}).map(([g, n]) => `${n}${g}`).join(' ');
     const rank = (k) => (r[k] ? `${r[k].kedudukan} / ${r[k].daripada}` : '-');
     const showRank = s.papar_kedudukan === '1' && (r.kedudukan_kelas || r.kedudukan_tingkatan);
-    const uasa = anyMark ? `<table class="slip-tbl"><thead><tr><th style="width:8mm">Bil</th><th style="width:20mm">Kod</th><th>Mata Pelajaran</th>
-        <th style="width:17mm">Markah</th><th style="width:13mm">Gred</th><th style="width:16mm">TP (PBD)</th></tr></thead><tbody>
-      ${rows.map((x, i) => `<tr><td class="c">${i + 1}</td><td class="b">${esc(x.kod)}</td><td>${esc(x.nama)}</td>
+    // UASA/TCS dan PBD dalam dua jadual berasingan (sebelah-menyebelah supaya muat 1 helai A4)
+    const exam = examName(data);
+    const markRows = rows.filter((x) => x.markah !== null || x.gred);
+    const tpRows = rows.filter((x) => x.tp);
+    const tblMark = markRows.length ? `<table class="slip-tbl"><thead><tr><th style="width:8mm">Bil</th><th style="width:18mm">Kod</th><th>Mata Pelajaran</th>
+        <th style="width:16mm">Markah</th><th style="width:13mm">Gred</th></tr></thead><tbody>
+      ${markRows.map((x, i) => `<tr><td class="c">${i + 1}</td><td class="b">${esc(x.kod)}</td><td>${esc(x.nama)}</td>
         <td class="c b ${x.markah === null ? 'na' : ''}">${x.markah === null ? (x.gred === 'TH' ? 'TH' : '-') : esc(fmtNum(x.markah))}</td>
-        <td class="c b">${esc(x.gred || '-')}</td><td class="c b">${x.tp ? 'TP' + x.tp : '-'}</td></tr>`).join('')}
-      </tbody></table>
-      <div class="slip-summary" style="grid-template-columns:repeat(${showRank ? 6 : 4},1fr)">
-        <div><div class="k">Bil. Subjek</div><div class="v">${r.bil_subjek}</div></div>
-        <div><div class="k">Jumlah Markah</div><div class="v">${r.purata === null ? '-' : esc(fmtNum(r.jumlah))}</div></div>
-        <div><div class="k">Purata</div><div class="v">${r.purata === null ? '-' : esc(fmtNum(r.purata))}</div></div>
-        <div><div class="k">Pencapaian Gred</div><div class="v" style="font-size:10pt">${esc(gredStr || '-')}</div></div>
-        ${showRank ? `<div><div class="k">Kedudukan Kelas</div><div class="v">${rank('kedudukan_kelas')}</div></div>
-        <div><div class="k">Kedudukan Tingkatan</div><div class="v">${rank('kedudukan_tingkatan')}</div></div>` : ''}
-      </div>` : '<div class="slip-empty">Markah UASA dan PBD belum dimasukkan.</div>';
+        <td class="c b">${esc(x.gred || '-')}</td></tr>`).join('')}
+      </tbody></table>` : `<div class="slip-empty">Markah ${exam} belum dimasukkan.</div>`;
+    const tblTP = `<table class="slip-tbl"><thead><tr><th>Kod</th><th style="width:14mm">TP</th></tr></thead><tbody>
+      ${tpRows.map((x) => `<tr><td class="b">${esc(x.kod)}</td><td class="c b">TP${x.tp}</td></tr>`).join('')}</tbody></table>`;
+    const uasa = anyMark ? `${tpRows.length ? `<div class="sk-split"><div class="sk-box"><h4>${exam === 'TCS' ? 'Keputusan TCS' : 'Ujian Akhir Sesi Akademik (UASA)'}</h4>${tblMark}</div>
+        <div class="sk-box"><h4>PBD</h4>${tblTP}</div></div>` : `<h4>${exam === 'TCS' ? 'Keputusan TCS' : 'Ujian Akhir Sesi Akademik (UASA)'}</h4>${tblMark}`}
+      ${markRows.length ? summaryHTML(s, r, gredStr, showRank, rank) : ''}` : `<h4>${exam} & PBD</h4><div class="slip-empty">Markah ${exam} dan PBD belum dimasukkan.</div>`;
 
     // jadual padat bagi satu modul
     const COLS = {
       bahasa: [['nilai', 'Tahap / Markah', 'c b']],
-      segak: [['nilai', 'Markah', 'c b'], ['gred', 'Gred', 'c b']],
+      segak: [['nilai1', 'Ujian 1', 'c b', 'gred1'], ['nilai', 'Ujian 2', 'c b', 'gred']],
       psiko: [['nilai', 'Keputusan / Profil', 'b'], ['dapatan', 'Dapatan Penilaian', '']],
       tcs: [['nilai', 'Markah / Tahap', 'c b']],
     };
     const mini = (key) => {
       const cfg = MODULES[key];
       const list = data.modul[key] || [];
-      const filled = list.some((x) => x.nilai || x.gred || x.dapatan);
+      const filled = list.some((x) => x.nilai || x.gred || x.dapatan || x.nilai1);
       return `<div class="sk-box"><h4>${esc(cfg.tajuk)}</h4>${filled ? `<table class="slip-tbl"><thead><tr><th>${esc(cfg.komponen)}</th>
         ${COLS[key].map(([, l]) => `<th>${esc(l)}</th>`).join('')}</tr></thead><tbody>
-        ${list.map((x) => `<tr><td>${esc(x.komponen)}</td>${COLS[key].map(([f, , c]) => `<td class="${c}">${esc(x[f] || '-')}</td>`).join('')}</tr>`).join('')}
+        ${list.map((x) => `<tr><td>${esc(x.komponen)}</td>${COLS[key].map(([f, , c, g]) => `<td class="${c}">${esc(x[f] || '-')}${g && x[g] ? `<div class="sm">${esc(x[g])}</div>` : ''}</td>`).join('')}</tr>`).join('')}
         </tbody></table>` : '<div class="slip-empty">Belum dimasukkan.</div>'}</div>`;
     };
     // lajur kiri: Kemahiran Berbahasa (+ TCS bagi T4); lajur kanan: SEGAK
-    const left = [data.modul.bahasa && 'bahasa', data.modul.tcs && data.pelajar.tingkatan === 4 && 'tcs'].filter(Boolean);
-    const body = `<h4>UASA & Pentaksiran Bilik Darjah (PBD)</h4>${uasa}
+    const left = [data.modul.bahasa && 'bahasa', data.modul.psiko && 'psiko'].filter(Boolean);
+    const body = `${uasa}
       <div class="sk-grid"><div>${left.map(mini).join('')}</div><div>${data.modul.segak ? mini('segak') : ''}</div></div>
-      ${data.modul.psiko ? mini('psiko') + '<div class="slip-note"><b>SULIT:</b> Maklumat psikometrik adalah untuk kegunaan pelajar dan ibu bapa/penjaga sahaja.</div>' : ''}
+      ${data.modul.psiko ? '<div class="slip-note"><b>SULIT:</b> Maklumat psikometrik adalah untuk kegunaan pelajar dan ibu bapa/penjaga sahaja.</div>' : ''}
       <div class="slip-note">TH = Tidak Hadir · TP = Tahap Penguasaan (TP1 Tahu … TP6 Beradab Mithali)</div>`;
     return slipShell(s, data, 'SLIP KEPUTUSAN KESELURUHAN', body).replace('<article class="slip">', '<article class="slip slip-all">');
   }
 
   function renderSlip(settings, data, type) {
     if (type === 'keseluruhan') return slipKeseluruhan(settings, data);
+    if (type === 'pbd') return slipPBD(settings, data);
     return type === 'uasa' ? slipUASA(settings, data) : slipModule(settings, data, type);
   }
 
@@ -695,7 +918,14 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     if (!root) { root = document.createElement('div'); root.id = 'print-root'; document.body.appendChild(root); }
     root.innerHTML = html;
     document.body.classList.add('printing');
-    const done = () => { document.body.classList.remove('printing'); root.innerHTML = ''; w.removeEventListener('afterprint', done); };
+    // Slip PBD berbilang halaman: jidar atas/bawah pada setiap halaman
+    let pst = null;
+    if (html.includes('slip-pbd')) {
+      pst = document.createElement('style');
+      pst.textContent = '@page{size:A4 portrait;margin:9mm 0}@media print{#print-root .slip{min-height:0!important;padding-top:0!important;padding-bottom:0!important}}';
+      document.head.appendChild(pst);
+    }
+    const done = () => { document.body.classList.remove('printing'); root.innerHTML = ''; if (pst) pst.remove(); w.removeEventListener('afterprint', done); };
     w.addEventListener('afterprint', done);
     setTimeout(() => w.print(), 60);
   }
@@ -717,13 +947,13 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 /* Lapisan data versi Artifact: menggantikan pelayan Node.
    Laluan /api/... yang sama dilayan di pelayar, data disimpan dalam `db` artifact.
    students/<id>  : maklumat pelajar + uasa{subjectId} + rec{componentId} (bahasa, segak, tcs)
-   psiko/<id>     : rec{componentId} psikometrik (hanya Editor/Pemilik)
+   psiko/<id>     : rec{componentId} psikometrik (dibuka kepada semua pengguna, sama seperti modul lain)
    config/settings, config/subjects, config/components : tetapan (hanya Editor/Pemilik menulis) */
 (function (w) {
   const MODULES = ['bahasa', 'segak', 'psiko', 'tcs'];
   const DEFAULT_SETTINGS = {
-    nama_sekolah: 'SM IMTIAZ DUNGUN', tajuk_slip: 'SLIP KEPUTUSAN AKHIR TAHUN 2026', penaung: 'YAYASAN TERENGGANU',
-    alamat: 'Dungun, Terengganu', tahun: '2026', nama_pengetua: '', logo: '', papar_psiko_slip: '1', papar_kedudukan: '1',
+    nama_sekolah: 'SM IMTIAZ YT DUNGUN', tajuk_slip: 'SLIP KEPUTUSAN AKHIR TAHUN 2026', penaung: 'JALAN SURA JETI 23000',
+    alamat: 'Dungun, Terengganu', tahun: '2026', nama_pengetua: '', logo: '', ttd_pengetua: '', cop_sekolah: '', papar_psiko_slip: '1', papar_kedudukan: '1',
     skala_rendah: '85:A, 70:B, 60:C, 50:D, 40:E, 0:F',
     skala_atas: '90:A+, 80:A, 70:A-, 65:B+, 60:B, 55:C+, 50:C, 45:D, 40:E, 0:G',
   };
@@ -733,8 +963,8 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
   ];
   const DEFAULT_SUBJECTS = SUBJ.flatMap(([p, list]) => list.map(([kod, nama], i) => ({ id: (p === 'rendah' ? 'r' : 'a') + (i + 1), kod, nama, peringkat: p, urutan: i + 1 })));
   const DEFAULT_COMPONENTS = [
-    ['bahasa', 'Bahasa Melayu - Lisan', 'Kemahiran mendengar dan bertutur'], ['bahasa', 'Bahasa Inggeris - Speaking', 'Listening and speaking skills'], ['bahasa', 'Bahasa Arab - Muhadathah', 'Kemahiran bertutur Bahasa Arab'],
-    ['segak', 'Indeks Jisim Badan (BMI)', ''], ['segak', 'Naik Turun Bangku', 'Daya tahan kardiovaskular (3 minit)'], ['segak', 'Tekan Tubi', 'Kekuatan dan daya tahan otot'],
+    ['bahasa', 'Bahasa Melayu - Lisan', 'Kemahiran mendengar dan bertutur'], ['bahasa', 'Bahasa Inggeris - Speaking', 'Listening and speaking skills'],
+    ['segak', 'Berat (kg)', ''], ['segak', 'Tinggi (m)', ''], ['segak', 'Indeks Jisim Badan (BMI)', ''], ['segak', 'Naik Turun Bangku', 'Daya tahan kardiovaskular (3 minit)'], ['segak', 'Tekan Tubi', 'Kekuatan dan daya tahan otot'],
     ['segak', 'Ringkuk Tubi Separa', 'Kekuatan dan daya tahan otot abdomen'], ['segak', 'Jangkauan Melunjur', 'Kelenturan'], ['segak', 'Jumlah Skor SEGAK', 'Skor keseluruhan'],
     ['psiko', 'Inventori Minat Kerjaya', ''], ['psiko', 'Inventori Personaliti', ''], ['tcs', 'Penilaian TCS', ''],
   ].map(([modul, nama, keterangan], i, arr) => ({ id: 'c' + (i + 1), modul, nama, keterangan, tingkatan: modul === 'tcs' ? '4' : '1,2,3,4', urutan: arr.slice(0, i).filter((x) => x[0] === modul).length + 1 }));
@@ -742,7 +972,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
   const st = {
     db: null, user: null, uid: null, isAdmin: false, canWrite: false, live: false,
     settings: { ...DEFAULT_SETTINGS }, subjects: DEFAULT_SUBJECTS, components: DEFAULT_COMPONENTS,
-    students: new Map(), psiko: new Map(), listeners: new Set(),
+    students: new Map(), psiko: new Map(), guru: new Map(), listeners: new Set(),
   };
 
   // ---------------------------------------------------------------- utiliti
@@ -818,7 +1048,8 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
       first('config/subjects', (s) => { st.subjects = s.exists && Array.isArray(s.data().list) ? s.data().list : DEFAULT_SUBJECTS; }),
       first('config/components', (s) => { st.components = s.exists && Array.isArray(s.data().list) ? s.data().list : DEFAULT_COMPONENTS; }),
       first('students', (snap) => { st.students = new Map(snap.docs.map((d) => [d.id, d.data()])); }),
-      st.isAdmin ? first('psiko', (snap) => { st.psiko = new Map(snap.docs.map((d) => [d.id, d.data()])); }) : Promise.resolve(true),
+      first('psiko', (snap) => { st.psiko = new Map(snap.docs.map((d) => [d.id, d.data()])); }),
+      first('guru_kelas', (snap) => { st.guru = new Map(snap.docs.map((d) => [d.id, d.data()])); }),
     ]);
     st.live = results.every(Boolean);
     return { ok: true, live: st.live };
@@ -885,13 +1116,14 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     if (!Number.isInteger(n) || n < 1 || n > 6) throw new HttpError(400, `TP "${clean(v)}" tidak sah (1-6).`);
     return n;
   }
+  const PBD_TEXT = ['penyataan', 'ulasan', 'usaha'];
   /* Kira nilai baharu UASA (tanpa menulis). Pulangkan entri atau null (padam). */
   function nextUasa(sid, subId, fields) {
     const stu = st.students.get(sid);
     const sub = st.subjects.find((s) => s.id === subId);
     if (!stu || !sub) throw new HttpError(404, 'Pelajar atau subjek tidak dijumpai.');
     if (peringkatOf(stu.tingkatan) !== sub.peringkat) throw new HttpError(400, 'Subjek ini bukan untuk tingkatan pelajar tersebut.');
-    const cur = { markah: null, gred: null, tp: null, catatan: null, ...(stu.uasa?.[subId] || {}) };
+    const cur = { markah: null, gred: null, tp: null, catatan: null, penyataan: null, ulasan: null, usaha: null, ...(stu.uasa?.[subId] || {}) };
     if ('markah' in fields) {
       const { markah, th } = parseMarkah(fields.markah);
       cur.markah = markah;
@@ -900,20 +1132,24 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     } else if ('gred' in fields) cur.gred = blank(fields.gred) ? null : clean(fields.gred).toUpperCase();
     if ('tp' in fields) cur.tp = parseTP(fields.tp);
     if ('catatan' in fields) cur.catatan = blank(fields.catatan) ? null : clean(fields.catatan);
-    if ([cur.markah, cur.gred, cur.tp, cur.catatan].every((v) => v === null)) return null;
-    return { markah: cur.markah, gred: cur.gred, tp: cur.tp, catatan: cur.catatan, updated_at: now() };
+    for (const k of PBD_TEXT) if (k in fields) cur[k] = blank(fields[k]) ? null : clean(fields[k]);
+    if (cur.usaha) cur.usaha = cur.usaha.toUpperCase();
+    if ([cur.markah, cur.gred, cur.tp, cur.catatan, ...PBD_TEXT.map((k) => cur[k])].every((v) => v === null || v === undefined)) return null;
+    return { markah: cur.markah, gred: cur.gred, tp: cur.tp, catatan: cur.catatan, penyataan: cur.penyataan ?? null, ulasan: cur.ulasan ?? null, usaha: cur.usaha ?? null, updated_at: now() };
   }
+  const REC_KEYS = ['nilai', 'gred', 'dapatan', 'catatan', 'nilai1', 'gred1'];
   function nextRec(modul, sid, comp, f) {
     const stu = st.students.get(sid);
     if (!stu) throw new HttpError(404, 'Pelajar tidak dijumpai.');
     if (!comp.tingkatan.split(',').map(Number).includes(stu.tingkatan)) {
       throw new HttpError(400, modul === 'tcs' ? 'TCS hanya untuk pelajar Tingkatan 4.' : 'Komponen ini tidak dibuka untuk tingkatan pelajar tersebut.');
     }
-    const cur = { nilai: null, gred: null, dapatan: null, catatan: null, ...(recOf(sid, modul, comp.id) || {}) };
-    for (const k of ['nilai', 'gred', 'dapatan', 'catatan']) if (k in f) cur[k] = blank(f[k]) ? null : clean(f[k]);
+    const cur = { nilai: null, gred: null, dapatan: null, catatan: null, nilai1: null, gred1: null, ...(recOf(sid, modul, comp.id) || {}) };
+    for (const k of REC_KEYS) if (k in f) cur[k] = blank(f[k]) ? null : clean(f[k]);
+    if (cur.gred1) cur.gred1 = cur.gred1.toUpperCase();
     if (cur.gred) cur.gred = cur.gred.toUpperCase();
-    if ([cur.nilai, cur.gred, cur.dapatan, cur.catatan].every((v) => v === null)) return null;
-    return { nilai: cur.nilai, gred: cur.gred, dapatan: cur.dapatan, catatan: cur.catatan, updated_at: now() };
+    if (REC_KEYS.every((k) => cur[k] === null || cur[k] === undefined)) return null;
+    return { nilai: cur.nilai, gred: cur.gred, dapatan: cur.dapatan, catatan: cur.catatan, nilai1: cur.nilai1 ?? null, gred1: cur.gred1 ?? null, updated_at: now() };
   }
 
   /* Kumpul perubahan mengikut dokumen pelajar dan tulis sekali bagi setiap dokumen */
@@ -958,33 +1194,47 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     if (!me) return null;
     return { kedudukan: list.filter((x) => x.purata > me.purata).length + 1, daripada: list.length };
   }
+  // Guru kelas & tandatangan mengikut kelas: guru_kelas/<T1-ABU_AMRU>
+  const guruKey = (t, k) => ('T' + t + '-' + String(k || '').toUpperCase().replace(/[^A-Z0-9]+/g, '_')).slice(0, 120);
   function buildSlip(id, cache = {}) {
     const d = st.students.get(id);
+    const gk = st.guru.get(guruKey(d.tingkatan, d.kelas)) || {};
     const peringkat = peringkatOf(d.tingkatan);
-    const uasa = subjectsOf(peringkat).map((s) => {
+    let uasa = subjectsOf(peringkat).map((s) => {
       const u = d.uasa?.[s.id] || {};
-      return { subject_id: s.id, kod: s.kod, nama: s.nama, markah: u.markah ?? null, gred: u.gred ?? null, tp: u.tp ?? null, catatan: u.catatan ?? null };
+      return { subject_id: s.id, kod: s.kod, nama: s.nama, markah: u.markah ?? null, gred: u.gred ?? null, tp: u.tp ?? null, catatan: u.catatan ?? null, penyataan: u.penyataan ?? null, ulasan: u.ulasan ?? null, usaha: u.usaha ?? null };
     });
+    // Subjek yang tidak diambil pelajar (tiada sebarang data) tidak dipaparkan dalam slip
+    const filled = (r) => r.markah !== null || r.gred || r.tp || r.penyataan || r.ulasan || r.usaha || r.catatan;
+    if (uasa.some(filled)) uasa = uasa.filter(filled);
     const marks = uasa.filter((r) => r.markah !== null).map((r) => r.markah);
     const jumlah = marks.reduce((a, b) => a + b, 0);
     const gc = {};
-    uasa.forEach((r) => { if (r.gred) gc[r.gred] = (gc[r.gred] || 0) + 1; });
+    const GORD = ['A+', 'A', 'A-', 'B+', 'B', 'C+', 'C', 'D', 'E', 'F', 'G', 'TH'];
+    uasa.map((r) => r.gred).filter(Boolean).sort((x, y) => (GORD.indexOf(x) + 1 || 99) - (GORD.indexOf(y) + 1 || 99)).forEach((g) => { gc[g] = (gc[g] || 0) + 1; });
     const ringkasan = { bil_subjek: uasa.filter((r) => r.markah !== null || r.gred).length, jumlah: Math.round(jumlah * 100) / 100, purata: marks.length ? Math.round((jumlah / marks.length) * 100) / 100 : null, gred: gc };
     if (st.settings.papar_kedudukan === '1' && marks.length) {
       const all = cache['t' + d.tingkatan] || (cache['t' + d.tingkatan] = ranks(d.tingkatan));
       ringkasan.kedudukan_tingkatan = rankOf(all, id);
       ringkasan.kedudukan_kelas = rankOf(all.filter((x) => x.kelas === (d.kelas || '')), id);
     }
+    // Maklumat rasmi daripada slip sekolah (jika diimport): gred purata, keputusan, kedudukan
+    const rs = d.uasa_rasmi || {};
+    const parseRank = (v) => { const m = String(v || '').match(/(\d+)\s*\/\s*(\d+)/); return m ? { kedudukan: Number(m[1]), daripada: Number(m[2]) } : null; };
+    if (rs.gred_purata) ringkasan.gred_purata = rs.gred_purata;
+    if (rs.keputusan) ringkasan.keputusan = rs.keputusan;
+    if (parseRank(rs.kedudukan_kelas)) ringkasan.kedudukan_kelas = parseRank(rs.kedudukan_kelas);
+    if (parseRank(rs.kedudukan_tingkatan)) ringkasan.kedudukan_tingkatan = parseRank(rs.kedudukan_tingkatan);
     const modul = {};
     for (const m of MODULES) {
-      if (m === 'tcs' && d.tingkatan !== 4) continue;
-      if (m === 'psiko' && !(st.isAdmin && st.settings.papar_psiko_slip === '1')) continue;
+      if (m === 'tcs') continue; // TCS kini = markah subjek Tingkatan 4 (dalam uasa)
+      if (m === 'psiko' && st.settings.papar_psiko_slip !== '1') continue;
       modul[m] = compsOf(m).filter((c) => c.tingkatan.split(',').includes(String(d.tingkatan))).map((c) => {
         const r = recOf(id, m, c.id) || {};
-        return { component_id: c.id, komponen: c.nama, keterangan: c.keterangan, nilai: r.nilai ?? null, gred: r.gred ?? null, dapatan: r.dapatan ?? null, catatan: r.catatan ?? null };
+        return { component_id: c.id, komponen: c.nama, keterangan: c.keterangan, nilai: r.nilai ?? null, gred: r.gred ?? null, dapatan: r.dapatan ?? null, catatan: r.catatan ?? null, nilai1: r.nilai1 ?? null, gred1: r.gred1 ?? null };
       });
     }
-    return { pelajar: { id, nama: d.nama, ic: d.ic, tingkatan: d.tingkatan, kelas: d.kelas || '', tahun: d.tahun }, peringkat, uasa, ringkasan, modul };
+    return { pelajar: { id, nama: d.nama, ic: d.ic, tingkatan: d.tingkatan, kelas: d.kelas || '', tahun: d.tahun, jantina: d.jantina || '', guru_kelas: d.guru_kelas || gk.nama || '', ttd_guru: gk.ttd || '', ulasan_guru_kelas: d.ulasan_guru_kelas || '' }, peringkat, uasa, ringkasan, modul };
   }
 
   // ---------------------------------------------------------------- penghala API
@@ -993,10 +1243,27 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 
   on('GET', '/api/me', () => ({
     user: { id: st.uid, username: st.me?.name || 'Anda', nama: st.me?.name || '', peranan: st.isAdmin ? 'admin' : st.canWrite ? 'guru' : 'pemerhati' },
-    perms: st.isAdmin ? ['*'] : st.canWrite ? ['pelajar', 'uasa', 'bahasa', 'segak', 'tcs', 'slip'] : ['slip'],
+    perms: st.isAdmin ? ['*'] : st.canWrite ? ['pelajar', 'uasa', 'bahasa', 'segak', 'psiko', 'tcs', 'slip'] : ['slip'],
     default_pw: false,
   }));
   on('GET', '/api/settings', () => ({ ...st.settings }));
+  on('GET', '/api/guru-kelas', () => {
+    const m = new Map();
+    for (const d of st.students.values()) { const k = guruKey(d.tingkatan, d.kelas); if (!m.has(k)) m.set(k, { key: k, tingkatan: d.tingkatan, kelas: d.kelas || '', nama: '', ttd: '' }); }
+    for (const [k, g] of st.guru) m.set(k, { ...(m.get(k) || {}), key: k, tingkatan: g.tingkatan, kelas: g.kelas, nama: g.nama || '', ttd: g.ttd || '' });
+    return [...m.values()].sort((a, b) => a.tingkatan - b.tingkatan || a.kelas.localeCompare(b.kelas));
+  });
+  on('PUT', '/api/guru-kelas', async (q, b) => {
+    needAdmin(); needDb();
+    const t = parseTingkatan(b.tingkatan); const kelas = clean(b.kelas).toUpperCase();
+    if (!t || !kelas) throw new HttpError(400, 'Tingkatan dan kelas wajib.');
+    const ttd = clean(b.ttd);
+    if (ttd && (!/^data:image\//.test(ttd) || ttd.length > 400000)) throw new HttpError(400, 'Imej tandatangan tidak sah atau terlalu besar.');
+    const k = guruKey(t, kelas); const doc = { tingkatan: t, kelas, nama: clean(b.nama).toUpperCase(), ttd, updated_at: now() };
+    await retry(() => st.db.doc('guru_kelas/' + k).set(doc));
+    st.guru.set(k, doc);
+    return { ok: true };
+  });
   on('GET', '/api/public/settings', () => ({ ...st.settings }));
   on('PUT', '/api/settings', async (q, b) => {
     needAdmin(); needDb();
@@ -1024,10 +1291,11 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
       const us = Object.values(d.uasa || {}).filter(Boolean);
       const hasMark = us.some((u) => u.markah !== null || u.gred);
       if (hasMark) k.ada_uasa++;
-      uasa += us.filter((u) => u.markah !== null || u.gred).length;
+      const nm = us.filter((u) => u.markah !== null || u.gred).length;
+      if (d.tingkatan === 4) mod.tcs += nm; else uasa += nm;
       pbd += us.filter((u) => u.tp).length;
       let any = us.some(hasVal);
-      for (const [cid, r] of Object.entries(d.rec || {})) if (hasVal(r) && compMod[cid]) { mod[compMod[cid]]++; any = true; }
+      for (const [cid, r] of Object.entries(d.rec || {})) if (hasVal(r) && compMod[cid] && compMod[cid] !== 'tcs') { mod[compMod[cid]]++; any = true; }
       for (const r of Object.values(st.psiko.get(id)?.rec || {})) if (hasVal(r)) { mod.psiko++; any = true; }
       if (any) berkeputusan++;
     }
@@ -1124,7 +1392,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
   });
   on('DELETE', '/api/subjects/:id', async (q, b, p) => { await saveSubjects(st.subjects.filter((s) => s.id !== p.id)); return { ok: true }; });
 
-  const modNeed = (m) => { if (!MODULES.includes(m)) throw new HttpError(404, 'Modul tidak wujud.'); if (m === 'psiko') needAdmin(); };
+  const modNeed = (m) => { if (!MODULES.includes(m)) throw new HttpError(404, 'Modul tidak wujud.'); };
   const tingList = (v, m) => {
     if (m === 'tcs') return '4';
     const l = [...new Set(String(v || '1,2,3,4').split(/[^1-4]+/).filter(Boolean))].sort();
@@ -1153,7 +1421,32 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     const sub = st.subjects.find((s) => s.id === q.subject_id);
     if (!sub) throw new HttpError(400, 'Sila pilih subjek.');
     return studentList().filter((x) => peringkatOf(x.tingkatan) === sub.peringkat && (blank(q.tingkatan) || x.tingkatan === Number(q.tingkatan)) && (blank(q.kelas) || x.kelas === q.kelas))
-      .map((x) => { const u = st.students.get(x.id).uasa?.[sub.id] || {}; return { student_id: x.id, nama: x.nama, ic: x.ic, tingkatan: x.tingkatan, kelas: x.kelas, markah: u.markah ?? null, gred: u.gred ?? null, tp: u.tp ?? null, catatan: u.catatan ?? null, updated_at: u.updated_at || null }; });
+      .map((x) => { const u = st.students.get(x.id).uasa?.[sub.id] || {}; return { student_id: x.id, nama: x.nama, ic: x.ic, tingkatan: x.tingkatan, kelas: x.kelas, markah: u.markah ?? null, gred: u.gred ?? null, tp: u.tp ?? null, catatan: u.catatan ?? null, penyataan: u.penyataan ?? null, ulasan: u.ulasan ?? null, usaha: u.usaha ?? null, updated_at: u.updated_at || null }; });
+  });
+  // bilangan rekod bagi setiap komponen modul, untuk tingkatan/kelas tertentu
+  on('GET', '/api/modul/:modul/counts', (q, b, p) => {
+    modNeed(p.modul);
+    const L = studentList().filter((x) => (blank(q.tingkatan) || x.tingkatan === Number(q.tingkatan)) && (blank(q.kelas) || x.kelas === q.kelas));
+    return Object.fromEntries(compsOf(p.modul).map((c) => [c.id, L.filter((x) => hasVal(recOf(x.id, p.modul, c.id))).length]));
+  });
+  // grid ulasan guru kelas (peringkat pelajar)
+  on('GET', '/api/grid/kelas', (q) => studentList().filter((x) => (blank(q.tingkatan) || x.tingkatan === Number(q.tingkatan)) && (blank(q.kelas) || x.kelas === q.kelas))
+    .map((x) => { const d = st.students.get(x.id); return { student_id: x.id, nama: x.nama, ic: x.ic, tingkatan: x.tingkatan, kelas: x.kelas, ulasan_guru_kelas: d.ulasan_guru_kelas ?? null, guru_kelas: d.guru_kelas ?? null, updated_at: d.updated_at || null }; }));
+  on('PUT', '/api/grid/kelas', async (q, b) => {
+    needWrite(); needDb();
+    const result = { saved: 0, deleted: 0, errors: [] };
+    await pool(b.rows || [], async (r) => {
+      try {
+        const d = st.students.get(r.student_id);
+        if (!d) throw new HttpError(404, 'Pelajar tidak dijumpai.');
+        const patch = { updated_at: now() };
+        for (const k of ['ulasan_guru_kelas', 'guru_kelas']) if (k in r) patch[k] = blank(r[k]) ? null : clean(r[k]);
+        await retry(() => sDoc(r.student_id).update(patch));
+        st.students.set(r.student_id, { ...d, ...patch });
+        result.saved++;
+      } catch (e) { result.errors.push({ student_id: r.student_id, mesej: e.message }); }
+    });
+    return result;
   });
   on('PUT', '/api/grid/uasa', async (q, b) => {
     needWrite(); needDb();
@@ -1162,7 +1455,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     for (const r of b.rows || []) {
       try {
         const f = {};
-        for (const k of ['markah', 'gred', 'tp', 'catatan']) if (k in r) f[k] = r[k];
+        for (const k of ['markah', 'gred', 'tp', 'catatan', ...PBD_TEXT]) if (k in r) f[k] = r[k];
         const v = nextUasa(r.student_id, b.subject_id, f);
         addPatch(changes, 'students', r.student_id, 'uasa', b.subject_id, v);
         result[v ? 'saved' : 'deleted']++;
@@ -1244,7 +1537,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     if (!comp) throw new HttpError(400, 'Sila pilih komponen.');
     const ts = comp.tingkatan.split(',').map(Number);
     return studentList().filter((x) => ts.includes(x.tingkatan) && (blank(q.tingkatan) || x.tingkatan === Number(q.tingkatan)) && (blank(q.kelas) || x.kelas === q.kelas))
-      .map((x) => { const r = recOf(x.id, p.modul, comp.id) || {}; return { student_id: x.id, nama: x.nama, ic: x.ic, tingkatan: x.tingkatan, kelas: x.kelas, nilai: r.nilai ?? null, gred: r.gred ?? null, dapatan: r.dapatan ?? null, catatan: r.catatan ?? null, updated_at: r.updated_at || null }; });
+      .map((x) => { const r = recOf(x.id, p.modul, comp.id) || {}; return { student_id: x.id, nama: x.nama, ic: x.ic, tingkatan: x.tingkatan, kelas: x.kelas, nilai: r.nilai ?? null, gred: r.gred ?? null, dapatan: r.dapatan ?? null, catatan: r.catatan ?? null, nilai1: r.nilai1 ?? null, gred1: r.gred1 ?? null, updated_at: r.updated_at || null }; });
   });
   on('PUT', '/api/grid/:modul', async (q, b, p) => {
     modNeed(p.modul); needWrite(); needDb();
@@ -1255,7 +1548,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     for (const r of b.rows || []) {
       try {
         const f = {};
-        for (const k of ['nilai', 'gred', 'dapatan', 'catatan']) if (k in r) f[k] = r[k];
+        for (const k of REC_KEYS) if (k in r) f[k] = r[k];
         const v = nextRec(p.modul, r.student_id, comp, f);
         addPatch(changes, p.modul === 'psiko' ? 'psiko' : 'students', r.student_id, 'rec', comp.id, v);
         result[v ? 'saved' : 'deleted']++;
@@ -1281,14 +1574,14 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     const jobs = [];
     (b.rows || []).forEach((raw, i) => {
       const baris = i + 2;
-      const { out, extra } = mapRow(raw, { ic: STUDENT_KEYS.ic, komponen: ['komponen', 'komponenkemahiran', 'komponenujian', 'instrumen', 'jenisinstrumen', 'komponentcs', 'ujian'], nilai: ['nilai', 'markah', 'tahap', 'markahtahap', 'pencapaian', 'keputusan', 'profil', 'keputusanprofil', 'skor'], gred: ['gred', 'grade', 'gredtahap'], dapatan: ['dapatan', 'dapatanpenilaian'], catatan: ['catatan', 'ulasan'], _ign: IGN });
+      const { out, extra } = mapRow(raw, { ic: STUDENT_KEYS.ic, komponen: ['komponen', 'komponenkemahiran', 'komponenujian', 'instrumen', 'jenisinstrumen', 'komponentcs', 'ujian'], nilai: ['nilai', 'markah', 'tahap', 'markahtahap', 'pencapaian', 'keputusan', 'profil', 'keputusanprofil', 'skor'], gred: ['gred', 'grade', 'gredtahap'], dapatan: ['dapatan', 'dapatanpenilaian'], catatan: ['catatan', 'ulasan'], nilai1: ['nilai1', 'ujian1', 'markahujian1', 'skorujian1', 'ujianpertama'], gred1: ['gred1', 'gredujian1', 'statusujian1'], _ign: IGN });
       if (blank(out.ic)) { if (Object.values(raw).some((v) => !blank(v))) result.errors.push({ baris, mesej: 'Tiada No. IC.' }); return; }
       const ex = findByIC(normIC(out.ic));
       if (!ex) { result.errors.push({ baris, mesej: `Pelajar dengan IC ${clean(out.ic)} tiada dalam pangkalan data.` }); return; }
       if (!blank(out.komponen)) {
         const f = {};
-        for (const k of ['nilai', 'gred', 'dapatan', 'catatan']) if (!blank(out[k])) f[k] = out[k];
-        jobs.push([baris, ex[0], compFor(out.komponen, st.isAdmin || m !== 'psiko'), f]);
+        for (const k of REC_KEYS) if (!blank(out[k])) f[k] = out[k];
+        jobs.push([baris, ex[0], compFor(out.komponen, st.canWrite), f]);
       } else {
         for (const [k, v] of Object.entries(extra)) { if (blank(v)) continue; const c = compFor(k, false); if (c) jobs.push([baris, ex[0], c, { nilai: v }]); }
       }
@@ -1361,7 +1654,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     if (MODULES.includes(w2)) {
       modNeed(w2);
       return L.flatMap((s) => compsOf(w2).map((c) => [c, recOf(s.id, w2, c.id)]).filter(([, r]) => hasVal(r))
-        .map(([c, r]) => ({ NAMA: s.nama, 'NO IC': s.ic, TINGKATAN: s.tingkatan, KELAS: s.kelas, KOMPONEN: c.nama, NILAI: r.nilai ?? '', GRED: r.gred ?? '', DAPATAN: r.dapatan ?? '', CATATAN: r.catatan ?? '' })));
+        .map(([c, r]) => ({ NAMA: s.nama, 'NO IC': s.ic, TINGKATAN: s.tingkatan, KELAS: s.kelas, KOMPONEN: c.nama, ...(w2 === 'segak' ? { 'UJIAN 1': r.nilai1 ?? '', 'GRED 1': r.gred1 ?? '' } : {}), NILAI: r.nilai ?? '', GRED: r.gred ?? '', DAPATAN: r.dapatan ?? '', CATATAN: r.catatan ?? '' })));
     }
     throw new HttpError(404, 'Jenis eksport tidak wujud.');
   });
@@ -1421,6 +1714,131 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 
   w.Store = { init, handle, state: st, onChange: (f) => st.listeners.add(f) };
 })(window);
+
+</script>
+<script>
+/* Muka depan dengan 2 log masuk (versi artifact & fail tempatan tanpa data tersulit):
+   Pelajar/Ibu Bapa -> semakan No. KP (slip sendiri sahaja); Pentadbir -> kata laluan. */
+window.SlipGate = function (boot) {
+  const ADMIN_PW = 'mazlan';
+  const KEY = 'slip2026_admin_ok';
+  try { if (sessionStorage.getItem(KEY) === '1') return boot(); } catch (x) { /* abaikan */ }
+  const _init = Store.init; let _p = null; Store.init = () => _p || (_p = _init());
+  const gate = document.createElement('div');
+  gate.id = 'seed-gate';
+  gate.innerHTML = `<style>
+      #seed-gate{position:fixed;inset:0;z-index:500;overflow:auto;background:linear-gradient(170deg,#7b1730 0,#5c0f22 300px,#f6f7f9 300.5px);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;color:#1f2937}
+      #seed-gate .g-hero{text-align:center;color:#fff;padding:28px 16px 18px}
+      #seed-gate .g-hero .crest{display:inline-block;height:auto;width:auto;overflow:visible;background:#fff;border-radius:12px;padding:8px 14px;margin-bottom:10px}
+      #seed-gate .g-hero .crest img{width:150px;height:auto;max-height:none;display:block}
+      #seed-gate .g-hero h1{font-size:20px;margin:0;font-weight:800;letter-spacing:.3px}
+      #seed-gate .g-hero p{margin:4px 0 0;font-size:13px;opacity:.85}
+      #seed-gate .g-wrap{max-width:440px;margin:0 auto;padding:0 16px 32px}
+      #seed-gate .g-wrap.wide{max-width:1080px}
+      #seed-gate .box{background:#fff;border-radius:14px;box-shadow:0 12px 32px rgba(16,24,40,.16);padding:22px 20px}
+      #seed-gate .choice{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;font:inherit;color:inherit}
+      #seed-gate .choice:hover,#seed-gate .choice:focus-visible{border-color:#7b1730;outline:none}
+      #seed-gate .choice .ic{flex:none;width:46px;height:46px;border-radius:10px;display:grid;place-items:center;background:#f9eef1;color:#7b1730}
+      #seed-gate .choice .ic svg{width:24px;height:24px}
+      #seed-gate .choice b{display:block;font-size:16px}
+      #seed-gate .choice span{font-size:12.5px;color:#6b7280}
+      #seed-gate h2{font-size:17px;color:#7b1730;margin:0 0 4px;font-weight:800}
+      #seed-gate .lead{color:#6b7280;font-size:13px;margin:0 0 14px}
+      #seed-gate input{width:100%;height:48px;border:2px solid #d3d7de;border-radius:8px;padding:0 12px;font-size:17px;box-sizing:border-box;font-family:inherit}
+      #seed-gate input.ic{text-align:center;letter-spacing:1.5px;font-weight:600}
+      #seed-gate input:focus{outline:none;border-color:#7b1730}
+      #seed-gate .go{width:100%;height:48px;margin-top:12px;border:0;border-radius:8px;background:#7b1730;color:#fff;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit}
+      #seed-gate .go:disabled{opacity:.6}
+      #seed-gate .back{background:none;border:0;color:#7b1730;font-weight:600;cursor:pointer;padding:0;margin-bottom:12px;font:inherit;font-size:13.5px}
+      #seed-gate .err{color:#b42318;font-size:13px;min-height:18px;margin-top:10px}
+      #seed-gate .note{font-size:11.5px;color:#6b7280;margin-top:12px;line-height:1.5}
+      #seed-gate .r-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+      #seed-gate .r-head b{font-size:17px;display:block}
+      #seed-gate .r-head .muted{font-size:12.5px;color:#6b7280}
+      #seed-gate .r-btns{display:flex;gap:8px;flex-wrap:wrap}
+      #seed-gate .r-btns button{height:40px;padding:0 14px;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:14px;border:1px solid #d3d7de;background:#fff;color:#1f2937}
+      #seed-gate .r-btns button.pri{background:#7b1730;border-color:#7b1730;color:#fff}
+      #seed-gate .hidden{display:none!important}
+      @media (max-width:600px){#seed-gate .box{padding:18px 14px}#seed-gate .g-wrap{padding:0 10px 24px}}
+      @media print{#seed-gate{display:none}}</style>
+      <header class="g-hero"><div class="crest" id="g-crest"></div><h1 id="g-sekolah">SM IMTIAZ YT DUNGUN</h1><p id="g-tajuk">SLIP KEPUTUSAN AKHIR TAHUN 2026</p></header>
+      <div class="g-wrap" id="g-wrap">
+        <div id="v-home">
+          <button type="button" class="choice" id="c-pel"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><b>Pelajar / Ibu Bapa</b><span>Semak keputusan menggunakan No. Kad Pengenalan pelajar</span></div></button>
+          <button type="button" class="choice" id="c-adm"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div><b>Pentadbir (Admin)</b><span>Akses penuh sistem dengan kata laluan</span></div></button>
+        </div>
+        <form class="box hidden" id="v-pel" autocomplete="off"><button type="button" class="back" data-back>&larr; Kembali</button>
+          <h2>Semakan Keputusan Pelajar</h2><p class="lead">Masukkan nombor kad pengenalan pelajar.</p>
+          <input class="ic" id="pel-ic" inputmode="numeric" placeholder="000000-00-0000" maxlength="14"><button type="submit" class="go" id="pel-go">SEMAK KEPUTUSAN</button>
+          <div class="err" id="pel-err"></div><div class="note">Contoh: 130512-11-1234. Tanda sempang (-) tidak wajib.</div></form>
+        <form class="box hidden" id="v-adm" autocomplete="off"><button type="button" class="back" data-back>&larr; Kembali</button>
+          <h2>Log Masuk Pentadbir</h2><p class="lead">Masukkan kata laluan pentadbir.</p>
+          <input type="password" id="seed-pw" placeholder="Kata laluan" autocomplete="current-password"><button type="submit" class="go" id="seed-go">Log Masuk</button>
+          <div class="err" id="seed-err"></div><div class="note">Data dinyahsulit dalam pelayar ini sahaja.</div></form>
+        <section class="box hidden" id="v-res">
+          <div class="r-head"><div><span class="muted">Keputusan untuk</span><b id="r-nama"></b><span class="muted" id="r-info"></span></div>
+            <div class="r-btns"><button type="button" id="r-baru">&larr; Semakan Baharu</button><button type="button" class="pri" id="r-print">Cetak Slip</button></div></div>
+          <div class="tabs" id="r-tabs" role="tablist"></div><div class="slip-stage" id="r-slip"></div>
+        </section>
+      </div>`;
+  const $g = (id) => gate.querySelector('#' + id);
+  $g('seed-err').nextElementSibling.textContent = 'Akses penuh untuk guru dan pentadbir sekolah.';
+  const show = (v) => {
+    ['v-home', 'v-pel', 'v-adm', 'v-res'].forEach((x) => $g(x).classList.toggle('hidden', x !== v));
+    $g('g-wrap').classList.toggle('wide', v === 'v-res');
+    const f = { 'v-pel': 'pel-ic', 'v-adm': 'seed-pw' }[v];
+    if (f) setTimeout(() => $g(f).focus(), 30);
+  };
+  document.body.appendChild(gate);
+  const boo = document.getElementById('boot'); if (boo) boo.style.visibility = 'hidden';
+  let settings = {};
+  Store.init().then(() => Store.handle('GET', '/api/settings')).then((s) => {
+    settings = s || {};
+    $g('g-crest').innerHTML = Shared.crestHTML(settings.logo);
+    if (settings.nama_sekolah) $g('g-sekolah').textContent = settings.nama_sekolah;
+    if (settings.tajuk_slip) $g('g-tajuk').textContent = settings.tajuk_slip;
+  }).catch(() => { $g('g-crest').innerHTML = Shared.crestHTML(''); });
+  gate.querySelectorAll('[data-back]').forEach((b) => b.addEventListener('click', () => show('v-home')));
+  $g('c-pel').addEventListener('click', () => show('v-pel'));
+  $g('c-adm').addEventListener('click', () => show('v-adm'));
+
+  let slip = null; let cur = 'keseluruhan';
+  $g('pel-ic').addEventListener('input', (e) => {
+    const d = e.target.value.replace(/\D/g, '').slice(0, 12);
+    e.target.value = [d.slice(0, 6), d.slice(6, 8), d.slice(8)].filter(Boolean).join('-');
+  });
+  const renderRes = () => {
+    const S = Shared; const p = slip.pelajar;
+    $g('r-nama').textContent = p.nama;
+    $g('r-info').textContent = `No. KP ${S.fmtIC(p.ic)} · Tingkatan ${p.tingkatan}${p.kelas ? ' ' + p.kelas : ''} · Tahun ${p.tahun}`;
+    $g('r-tabs').innerHTML = S.slipTypes(slip).map((t) => `<button type="button" role="tab" data-t="${t.id}" class="${t.id === cur ? 'active' : ''}">${S.esc(t.label)}</button>`).join('');
+    $g('r-slip').innerHTML = S.renderSlip(settings, slip, cur);
+    S.fitSlips($g('r-slip'));
+  };
+  $g('r-tabs').addEventListener('click', (e) => { const b = e.target.closest('button[data-t]'); if (b) { cur = b.dataset.t; renderRes(); } });
+  $g('r-print').addEventListener('click', () => Shared.printHTML(Shared.renderSlip(settings, slip, cur)));
+  $g('r-baru').addEventListener('click', () => { slip = null; $g('pel-ic').value = ''; $g('r-slip').innerHTML = ''; show('v-pel'); });
+  $g('v-pel').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const ic = $g('pel-ic').value.replace(/\D/g, ''); const err = $g('pel-err'); const btn = $g('pel-go');
+    if (ic.length !== 12) { err.textContent = 'Nombor kad pengenalan mesti mengandungi 12 digit.'; return; }
+    btn.disabled = true; btn.textContent = 'Sedang menyemak...'; err.textContent = '';
+    try {
+      await Store.init();
+      slip = await Store.handle('POST', '/api/semak', { ic });
+      cur = 'keseluruhan'; show('v-res'); renderRes();
+    } catch (x) {
+      err.textContent = (x && x.message) || 'Tiada rekod dijumpai bagi No. Kad Pengenalan ini.';
+    } finally { btn.disabled = false; btn.textContent = 'SEMAK KEPUTUSAN'; }
+  });
+  $g('v-adm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if ($g('seed-pw').value.trim() !== ADMIN_PW) { $g('seed-err').textContent = 'Kata laluan salah. Sila cuba lagi.'; return; }
+    try { sessionStorage.setItem(KEY, '1'); } catch (x) { /* abaikan */ }
+    gate.remove(); if (boo) boo.style.visibility = '';
+    boot();
+  });
+};
 
 </script>
 <script>
@@ -1647,11 +2065,12 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
     { id: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
     { id: 'pelajar', label: 'Pengurusan Pelajar', icon: 'users' },
     { sep: 'Modul Keputusan' },
-    { id: 'uasa', label: 'UASA & PBD', icon: 'book', perm: 'uasa' },
+    { id: 'uasa', label: 'UASA (T1–T3)', icon: 'book', perm: 'uasa' },
+    { id: 'pbd', label: 'Pentaksiran (PBD)', icon: 'layers', perm: 'uasa' },
     { id: 'bahasa', label: 'Kemahiran Berbahasa', icon: 'chat', perm: 'bahasa' },
     { id: 'segak', label: 'SEGAK', icon: 'activity', perm: 'segak' },
-    { id: 'psiko', label: 'Psikometrik', icon: 'brain', perm: 'psiko', lock: true },
-    { id: 'tcs', label: 'TCS', icon: 'award', perm: 'tcs' },
+    { id: 'psiko', label: 'Psikometrik', icon: 'brain', perm: 'psiko' },
+    { id: 'tcs', label: 'TCS (T4)', icon: 'award', perm: 'uasa' },
     { sep: 'Laporan & Sistem' },
     { id: 'slip', label: 'Slip Keputusan', icon: 'file', perm: 'slip' },
     { id: 'semak', label: 'Semakan No. IC', icon: 'search', perm: 'slip' },
@@ -1713,8 +2132,8 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
       </div>
       <div class="grid-2 section-gap">
         <div class="card">
-          <div class="card-head"><h3>Status Kemasukan Markah UASA Mengikut Kelas</h3><span class="badge">${st.kelas.length} kelas</span></div>
-          ${st.kelas.length ? `<div class="table-wrap"><table class="tbl"><thead><tr><th>Tingkatan</th><th>Kelas</th><th class="num">Pelajar</th><th>Ada Markah UASA</th></tr></thead><tbody>
+          <div class="card-head"><h3>Status Kemasukan Markah UASA / TCS Mengikut Kelas</h3><span class="badge">${st.kelas.length} kelas</span></div>
+          ${st.kelas.length ? `<div class="table-wrap"><table class="tbl"><thead><tr><th>Tingkatan</th><th>Kelas</th><th class="num">Pelajar</th><th>Ada Markah UASA / TCS</th></tr></thead><tbody>
             ${st.kelas.map((k) => { const pc = k.pelajar ? Math.round((k.ada_uasa / k.pelajar) * 100) : 0; return `<tr><td>T${k.tingkatan}</td><td><b>${esc(k.kelas || '(tiada kelas)')}</b></td><td class="num">${k.pelajar}</td>
               <td><div style="display:flex;align-items:center;gap:10px"><div class="bar"><span style="width:${pc}%"></span></div><span class="small mono">${k.ada_uasa}/${k.pelajar}</span></div></td></tr>`; }).join('')}
             </tbody></table></div>` : `<div class="empty">${icon('grid')}<div>Tiada kelas lagi.</div></div>`}
@@ -1723,12 +2142,12 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
           <div class="card">
             <div class="card-head"><h3>Rekod Mengikut Modul</h3></div>
             <ul class="mini-list">
-              ${modRow('UASA (markah)', st.uasa, 'book')}
+              ${modRow('UASA T1–T3 (markah)', st.uasa, 'book')}
               ${modRow('PBD (tahap penguasaan)', st.pbd, 'layers')}
               ${modRow('Kemahiran Berbahasa', st.modul.bahasa, 'chat')}
               ${modRow('SEGAK', st.modul.segak, 'activity')}
               ${can('psiko') ? modRow('Psikometrik', st.modul.psiko, 'brain') : ''}
-              ${modRow('TCS (Tingkatan 4)', st.modul.tcs, 'award')}
+              ${modRow('TCS T4 (markah)', st.modul.tcs, 'award')}
             </ul>
           </div>
           <div class="card section-gap card-pad">
@@ -1865,6 +2284,8 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
     const cell = (r, c) => {
       const v = r[c.key] ?? '';
       if (c.type === 'tp') return `<select class="input w-s" data-k="${c.key}">${['', 1, 2, 3, 4, 5, 6].map((t) => `<option value="${t}" ${String(v) === String(t) ? 'selected' : ''}>${t ? 'TP' + t : '-'}</option>`).join('')}</select>`;
+      if (c.type === 'opt') return `<select class="input ${c.cls || 'w-m'}" data-k="${c.key}">${['', ...c.options].map((t) => `<option value="${esc(t)}" ${String(v) === String(t) ? 'selected' : ''}>${esc(t || '-')}</option>`).join('')}</select>`;
+      if (c.type === 'area') return `<textarea class="input g-area ${c.cls || 'w-l'}" data-k="${c.key}" rows="3">${esc(v)}</textarea>`;
       if (c.type === 'mark') return `<input class="input w-s mono" data-k="${c.key}" inputmode="decimal" value="${esc(r.gred === 'TH' && v === '' ? 'TH' : fmtNum(v))}" placeholder="0-100">`;
       return `<input class="input ${c.cls || 'w-m'}" data-k="${c.key}" value="${esc(v)}">`;
     };
@@ -1893,7 +2314,7 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
     host.addEventListener('input', (e) => { const tr = e.target.closest('tr[data-sid]'); if (tr && e.target.dataset.k) track(tr); });
     host.addEventListener('change', (e) => { const tr = e.target.closest('tr[data-sid]'); if (tr && e.target.dataset.k) track(tr); });
     host.addEventListener('keydown', (e) => {
-      if (e.key !== 'Enter' || !e.target.dataset.k) return;
+      if (e.key !== 'Enter' || !e.target.dataset.k || (e.target.tagName === 'TEXTAREA' && !e.ctrlKey)) return;
       e.preventDefault();
       const tr = e.target.closest('tr');
       const next = (e.shiftKey ? tr.previousElementSibling : tr.nextElementSibling)?.querySelector(`[data-k="${e.target.dataset.k}"]`);
@@ -1930,16 +2351,22 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
   }
 
   // ------------------------------------------------------------ UASA & PBD
-  VIEWS.uasa = async (el) => {
+  const USAHA = ['RENDAH', 'SEDERHANA', 'TINGGI', 'SANGAT TINGGI'];
+  // mode: 'uasa' (T1-T3), 'tcs' (markah subjek T4), 'pbd' (semua tingkatan)
+  const uasaView = (mode) => async (el) => {
     await refreshClasses();
     const subjects = await api('GET', '/api/subjects');
-    let mode = 'uasa';
-    el.innerHTML = pageHead('UASA & PBD', 'Kemasukan markah Ujian Akhir Sesi Akademik (UASA) dan Tahap Penguasaan (TP) Pentaksiran Bilik Darjah (PBD) mengikut subjek.',
-      `<button class="btn" id="u-tpl">${icon('download')} Templat</button><button class="btn btn-blue" id="u-import">${icon('upload')} Import Excel/CSV</button>`) + `
+    const isMark = mode !== 'pbd';
+    const ting = mode === 'uasa' ? [1, 2, 3] : mode === 'tcs' ? [4] : null;
+    const exam = mode === 'tcs' ? 'TCS' : 'UASA';
+    el.innerHTML = (isMark
+      ? pageHead(mode === 'tcs' ? 'TCS (Tingkatan 4)' : 'UASA (Tingkatan 1–3)', mode === 'tcs' ? 'Kemasukan markah TCS pelajar Tingkatan 4 mengikut subjek: markah, gred dan catatan.' : 'Kemasukan markah Ujian Akhir Sesi Akademik (UASA) Tingkatan 1–3 mengikut subjek: markah, gred dan catatan.',
+        `<button class="btn" id="u-tpl">${icon('download')} Templat</button><button class="btn btn-blue" id="u-import">${icon('upload')} Import Excel/CSV</button>`)
+      : pageHead('Pentaksiran Bilik Darjah (PBD)', 'Tahap Penguasaan (TP), Penyataan Tahap Penguasaan, Ulasan Guru Mata Pelajaran, Usaha Murid dan Ulasan Guru Kelas.',
+        `<button class="btn" id="u-tpl">${icon('download')} Templat TP</button><button class="btn btn-blue" id="u-import">${icon('upload')} Import Excel/CSV</button>`)) + `
       <div class="card">
-        <div class="tabs" id="u-tabs"><button class="active" data-m="uasa">Bahagian A: Markah UASA</button><button data-m="pbd">Bahagian B: PBD (Tahap Penguasaan)</button></div>
         <div class="toolbar">
-          <div class="field"><label>Tingkatan</label><select class="input" id="u-t">${tingkatanOpts(false)}</select></div>
+          <div class="field"><label>Tingkatan</label><select class="input" id="u-t">${tingkatanOpts(false, ting)}</select></div>
           <div class="field"><label>Kelas</label><select class="input" id="u-k"></select></div>
           <div class="field"><label>Subjek</label><select class="input" id="u-s"></select></div>
           <div class="field grow"><label>Cari pelajar</label><input class="input" id="u-q" placeholder="Nama atau No. IC"></div>
@@ -1951,30 +2378,39 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
     const fillSubj = () => {
       const prev = $('u-s').value;
       const list = subjFor($('u-t').value);
-      $('u-s').innerHTML = list.map((s) => `<option value="${s.id}">${esc(s.kod)} – ${esc(s.nama)}</option>`).join('');
-      if (list.some((s) => String(s.id) === prev)) $('u-s').value = prev;
+      $('u-s').innerHTML = list.map((s) => `<option value="${s.id}">${esc(s.kod)} – ${esc(s.nama)}</option>`).join('')
+        + (mode === 'pbd' ? '<option value="__kelas">★ Ulasan Guru Kelas</option>' : '');
+      if (list.some((s) => String(s.id) === prev) || (mode === 'pbd' && prev === '__kelas')) $('u-s').value = prev;
     };
     let data = [];
     const load = async () => {
       if (S.dirty && !(await confirmBox('Perubahan belum disimpan akan hilang. Teruskan?', { ok: 'Teruskan' }))) return;
       const sid = $('u-s').value;
       if (!sid) { $('u-grid').innerHTML = `<div class="empty">Tiada subjek untuk tingkatan ini.</div>`; return; }
-      data = await api('GET', `/api/grid/uasa?subject_id=${sid}&tingkatan=${$('u-t').value}&kelas=${encodeURIComponent($('u-k').value)}`);
+      data = sid === '__kelas'
+        ? await api('GET', `/api/grid/kelas?tingkatan=${$('u-t').value}&kelas=${encodeURIComponent($('u-k').value)}`)
+        : await api('GET', `/api/grid/uasa?subject_id=${sid}&tingkatan=${$('u-t').value}&kelas=${encodeURIComponent($('u-k').value)}`);
       draw();
     };
     const draw = () => {
       const t = $('u-t').value;
-      const sub = subjects.find((s) => String(s.id) === $('u-s').value);
-      $('u-info').innerHTML = mode === 'uasa'
+      const kelasMode = $('u-s').value === '__kelas';
+      const sub = subjects.find((s) => String(s.id) === $('u-s').value) || { kod: '', nama: '' };
+      $('u-info').innerHTML = kelasMode
+        ? `<div class="alert info">${icon('info')}<div><b>Ulasan Guru Kelas</b> dipaparkan di bahagian bawah Slip PBD bersama nama Guru Kelas.</div></div>`
+        : isMark
         ? `<div class="alert info">${icon('info')}<div><b>${esc(sub.kod)} – ${esc(sub.nama)}</b> (${t === '4' ? 'Menengah Atas' : 'Menengah Rendah'}). Masukkan markah 0–100, atau <b>TH</b> untuk tidak hadir. Gred dikira automatik mengikut skala di Tetapan Sistem. Tekan <b>Enter</b> untuk ke baris seterusnya.</div></div>`
-        : `<div class="alert info">${icon('info')}<div><b>${esc(sub.kod)} – ${esc(sub.nama)}</b>. Pilih Tahap Penguasaan TP1–TP6. ${Object.entries(TP_DESC).map(([k, v]) => `<span class="small"><b>TP${k}</b> ${esc(v)}</span>`).join(' · ')}</div></div>`;
-      const cols = mode === 'uasa'
-        ? [{ key: 'markah', label: 'Markah UASA', type: 'mark', derived: { label: 'Gred', key: 'gred', fn: (v) => gradeFor(v, t) } }, { key: 'catatan', label: 'Catatan', cls: 'w-l' }]
-        : [{ key: 'tp', label: 'Tahap Penguasaan (TP)', type: 'tp' }];
+        : `<div class="alert info">${icon('info')}<div><b>${esc(sub.kod)} – ${esc(sub.nama)}</b>. Pilih Tahap Penguasaan TP1–TP6 dan isi Penyataan TP, Ulasan Guru serta Usaha Murid. ${Object.entries(TP_DESC).map(([k, v]) => `<span class="small"><b>TP${k}</b> ${esc(v)}</span>`).join(' · ')}</div></div>`;
+      const cols = kelasMode
+        ? [{ key: 'ulasan_guru_kelas', label: 'Ulasan Guru Kelas', type: 'area', cls: 'w-xl' }, { key: 'guru_kelas', label: 'Nama Guru Kelas', cls: 'w-m' }]
+        : isMark
+          ? [{ key: 'markah', label: `Markah ${exam}`, type: 'mark', derived: { label: 'Gred', key: 'gred', fn: (v) => gradeFor(v, t) } }, { key: 'catatan', label: 'Catatan', cls: 'w-l' }]
+          : [{ key: 'tp', label: 'TP', type: 'tp' }, { key: 'penyataan', label: 'Penyataan Tahap Penguasaan', type: 'area' },
+            { key: 'ulasan', label: 'Ulasan Guru Mata Pelajaran', type: 'area' }, { key: 'usaha', label: 'Usaha Murid', type: 'opt', options: USAHA, cls: 'w-m' }];
       gridEditor($('u-grid'), data, cols, {
         emptyMsg: 'Tiada pelajar untuk tapisan ini. Tambah pelajar di Pengurusan Pelajar.',
         filterText: $('u-q').value,
-        onSave: (rows) => api('PUT', '/api/grid/uasa', { subject_id: $('u-s').value, rows }),
+        onSave: (rows) => (kelasMode ? api('PUT', '/api/grid/kelas', { rows }) : api('PUT', '/api/grid/uasa', { subject_id: $('u-s').value, rows })),
       });
     };
     $('u-k').innerHTML = kelasOpts(1);
@@ -1984,34 +2420,27 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
     $('u-s').onchange = load;
     let timer;
     $('u-q').oninput = () => { clearTimeout(timer); timer = setTimeout(() => { if (!S.dirty) draw(); }, 250); };
-    $('u-tabs').onclick = async (e) => {
-      const b = e.target.closest('button[data-m]');
-      if (!b || b.dataset.m === mode) return;
-      if (S.dirty && !(await confirmBox('Perubahan belum disimpan akan hilang. Teruskan?', { ok: 'Teruskan' }))) return;
-      S.dirty = false;
-      mode = b.dataset.m;
-      $('u-tabs').querySelectorAll('button').forEach((x) => x.classList.toggle('active', x === b));
-      await load();
-    };
     const tpl = () => {
       const t = Number($('u-t').value);
       const row = { BIL: 1, NAMA: 'AHMAD BIN ABDULLAH', 'NO IC': '130512110123', TINGKATAN: t, KELAS: 'IBNU SINA' };
-      subjFor(t).forEach((s) => { row[s.kod] = ''; });
-      subjFor(t).forEach((s) => { row['TP ' + s.kod] = ''; });
+      if (isMark) subjFor(t).forEach((s) => { row[s.kod] = ''; });
+      else subjFor(t).forEach((s) => { row['TP ' + s.kod] = ''; });
       return [row];
     };
-    $('u-tpl').onclick = () => downloadXlsx(tpl(), `templat-uasa-pbd-T${$('u-t').value}.xlsx`, 'UASA PBD');
+    $('u-tpl').onclick = () => downloadXlsx(tpl(), `templat-${mode}-T${$('u-t').value}.xlsx`, mode.toUpperCase());
     $('u-import').onclick = () => importModal({
-      title: 'Import Markah UASA & PBD',
+      title: isMark ? `Import Markah ${exam}` : 'Import Tahap Penguasaan PBD',
       intro: `<div class="alert info">${icon('info')}<div>Dua format diterima:<br>
         <b>1. Format lebar</b> (disyorkan): lajur <b>NO IC</b> + satu lajur bagi setiap kod subjek (cth. <b>BM</b>, <b>BI</b>, <b>MM</b>) untuk markah, dan <b>TP BM</b>, <b>TP BI</b> ... untuk PBD.<br>
         <b>2. Format panjang</b>: lajur <b>NO IC</b>, <b>SUBJEK</b> (kod), <b>MARKAH</b>, <b>TP</b>, <b>CATATAN</b> – satu baris bagi setiap subjek.<br>
         Pelajar dikenal pasti melalui No. IC dan mesti sudah didaftarkan. Hanya subjek yang sepadan dengan tingkatan pelajar akan diterima.</div></div>`,
-      endpoint: '/api/uasa/import', template: tpl, templateName: `templat-uasa-pbd-T${$('u-t').value}.xlsx`,
+      endpoint: '/api/uasa/import', template: tpl, templateName: `templat-${mode}-T${$('u-t').value}.xlsx`,
       after: () => { S.dirty = false; load(); },
     });
     load();
   };
+  VIEWS.uasa = uasaView('uasa');
+  VIEWS.pbd = uasaView('pbd');
 
   // ------------------------------------------------------------ MODUL FLEKSIBEL
   function moduleView(key) {
@@ -2023,7 +2452,7 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
       const only = cfg.t4 ? [4] : null;
       el.innerHTML = pageHead(cfg.tajuk, key === 'tcs' ? 'Modul TCS khas untuk pelajar <b>Tingkatan 4</b> sahaja.' : `Rekod keputusan ${esc(cfg.tajuk)} setiap pelajar mengikut ${esc(cfg.komponen.toLowerCase())}.`,
         `<button class="btn" id="m-tpl">${icon('download')} Templat</button><button class="btn btn-blue" id="m-import">${icon('upload')} Import Excel/CSV</button>`) + `
-        ${cfg.sulit ? `<div class="alert warn" style="margin-bottom:16px">${icon('lock')}<div><b>Maklumat SULIT.</b> Modul ini hanya boleh diakses oleh Pentadbir dan Kaunselor. Paparan pada semakan awam boleh dikawal di Tetapan Sistem.</div></div>` : ''}
+        ${cfg.sulit ? `<div class="alert info" style="margin-bottom:16px">${icon('info')}<div>Keputusan Psikometrik dibuka kepada semua guru dan dipaparkan dalam slip serta semakan No. IC. Paparan dalam slip boleh dimatikan di Tetapan Sistem.</div></div>` : ''}
         <div class="card">
           <div class="tabs" id="m-tabs"><button class="active" data-t="rekod">Kemasukan Rekod</button><button data-t="komponen">${esc(cfg.komponen)} (${comps.length})</button></div>
           <div id="m-body"></div>
@@ -2038,12 +2467,17 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
             <div class="field grow"><label>Cari pelajar</label><input class="input" id="m-q" placeholder="Nama atau No. IC"></div>
           </div><div id="m-info" style="padding:12px 18px 0"></div><div id="m-grid"></div>`;
         let data = [];
-        const fillComp = () => {
+        // Senarai komponen dengan bilangan rekod; pilih automatik komponen yang ada data
+        const fillComp = async () => {
           const t = $('m-t').value;
           const list = comps.filter((c) => c.tingkatan.split(',').includes(String(t)));
           const prev = $('m-c').value;
-          $('m-c').innerHTML = list.map((c) => `<option value="${c.id}">${esc(c.nama)}</option>`).join('');
-          if (list.some((c) => String(c.id) === prev)) $('m-c').value = prev;
+          let n = {};
+          try { n = await api('GET', `/api/modul/${key}/counts?tingkatan=${t}&kelas=${encodeURIComponent($('m-k').value)}`); } catch (e) { /* abaikan */ }
+          $('m-c').innerHTML = list.map((c) => `<option value="${c.id}">${esc(c.nama)}${n[c.id] !== undefined ? ` (${n[c.id]} rekod)` : ''}</option>`).join('');
+          const withData = list.filter((c) => n[c.id] > 0);
+          if (list.some((c) => String(c.id) === prev) && (n[prev] > 0 || !withData.length)) $('m-c').value = prev;
+          else if (withData.length) $('m-c').value = withData[0].id;
         };
         const load = async () => {
           if (S.dirty && !(await confirmBox('Perubahan belum disimpan akan hilang. Teruskan?', { ok: 'Teruskan' }))) return;
@@ -2067,13 +2501,12 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
           });
         };
         $('m-k').innerHTML = kelasOpts($('m-t').value);
-        fillComp();
-        $('m-t').onchange = () => { $('m-k').innerHTML = kelasOpts($('m-t').value); fillComp(); load(); };
-        $('m-k').onchange = load;
+        $('m-t').onchange = async () => { $('m-k').innerHTML = kelasOpts($('m-t').value); await fillComp(); load(); };
+        $('m-k').onchange = async () => { await fillComp(); load(); };
         $('m-c').onchange = load;
         let timer;
         $('m-q').oninput = () => { clearTimeout(timer); timer = setTimeout(() => { if (!S.dirty) draw(); }, 250); };
-        load();
+        fillComp().then(load);
       };
 
       const drawKomponen = () => {
@@ -2148,7 +2581,7 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
   VIEWS.bahasa = moduleView('bahasa');
   VIEWS.segak = moduleView('segak');
   VIEWS.psiko = moduleView('psiko');
-  VIEWS.tcs = moduleView('tcs');
+  VIEWS.tcs = uasaView('tcs');
 
   // ------------------------------------------------------------ SLIP KEPUTUSAN
   VIEWS.slip = async (el, id) => {
@@ -2174,11 +2607,20 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
       </div>`;
     const jenis = () => {
       const t = Number($('b-t').value);
-      const opts = [['uasa', 'UASA & PBD'], ['bahasa', 'Kemahiran Berbahasa'], ['segak', 'SEGAK']];
+      const opts = [['keseluruhan', 'Slip Keseluruhan (1 helai)'], ['uasa', t === 4 ? 'Keputusan TCS (Tingkatan 4)' : 'Slip UASA (Tingkatan 1–3)']];
+      if (t !== 4) opts.push(['__tcs', 'Keputusan TCS (Tingkatan 4 sahaja)']);
+      opts.push(['pbd', 'Pentaksiran (PBD)'], ['bahasa', 'Kemahiran Berbahasa'], ['segak', 'SEGAK']);
       if (can('psiko')) opts.push(['psiko', 'Psikometrik']);
-      if (t === 4) opts.push(['tcs', 'TCS']);
-      opts.push(['keseluruhan', 'Slip Keseluruhan']);
       $('b-j').innerHTML = opts.map(([v, l]) => `<option value="${v}">${l}</option>`).join('');
+    };
+    // Pilih "Slip TCS" ketika tingkatan lain dipilih: tukar terus ke Tingkatan 4
+    $('b-j').onchange = () => {
+      if ($('b-j').value !== '__tcs') return;
+      $('b-t').value = '4';
+      $('b-k').innerHTML = kelasOpts(4);
+      jenis();
+      $('b-j').value = 'uasa';
+      toast('Keputusan TCS hanya untuk Tingkatan 4. Tingkatan ditukar kepada Tingkatan 4.', 'ok');
     };
     $('b-k').innerHTML = kelasOpts(1);
     jenis();
@@ -2212,16 +2654,18 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
 
   async function slipDetail(el, id) {
     const data = await api('GET', '/api/slip/' + encodeURIComponent(id));
-    let cur = 'uasa';
+    let cur = 'keseluruhan';
     const p = data.pelajar;
     const draw = () => {
       const types = slipTypes(data);
       el.innerHTML = pageHead(p.nama, `No. KP ${esc(fmtIC(p.ic))} · Tingkatan ${p.tingkatan} ${esc(p.kelas)} · Tahun ${p.tahun}`,
-        `<a class="btn" href="#slip">${icon('arrowLeft')} Kembali</a>${can('pelajar') ? '' : ''}<button class="btn btn-primary" id="sd-print">${icon('printer')} PRINT RESULT</button>`) + `
+        `<a class="btn" href="#slip">${icon('arrowLeft')} Kembali</a>${can('pelajar') ? '' : ''}${Number(p.tingkatan) === 4 ? `<button class="btn btn-blue" id="sd-print-tcs">${icon('printer')} Cetak Keputusan TCS</button>` : ''}<button class="btn btn-blue" id="sd-print-all">${icon('printer')} Cetak Slip Keseluruhan (1 helai)</button><button class="btn btn-primary" id="sd-print">${icon('printer')} PRINT RESULT</button>`) + `
         <div class="card"><div class="tabs" id="sd-tabs">${types.map((t) => `<button data-t="${t.id}" class="${t.id === cur ? 'active' : ''}">${esc(t.label)}</button>`).join('')}</div>
         <div class="slip-stage">${renderSlip(S.settings, data, cur)}</div></div>`;
       $('sd-tabs').onclick = (e) => { const b = e.target.closest('button[data-t]'); if (b) { cur = b.dataset.t; draw(); } };
       $('sd-print').onclick = () => printHTML(renderSlip(S.settings, data, cur), `Slip ${p.nama} ${cur}`);
+      $('sd-print-all').onclick = () => printHTML(renderSlip(S.settings, data, 'keseluruhan'), `Slip Keseluruhan ${p.nama}`);
+      if ($('sd-print-tcs')) $('sd-print-tcs').onclick = () => printHTML(renderSlip(S.settings, data, 'uasa'));
       Shared.fitSlips(el.querySelector('.slip-stage'));
     };
     draw();
@@ -2233,7 +2677,7 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
     el.innerHTML = pageHead('Pengurusan Database', 'Sandaran, pemulihan, eksport dan penyelenggaraan pangkalan data sistem.') + `
       <div class="stats">
         <div class="stat"><div class="ic">${icon('users')}</div><div><div class="v">${st.jumlah}</div><div class="l">Rekod pelajar</div></div></div>
-        <div class="stat"><div class="ic">${icon('book')}</div><div><div class="v">${st.uasa + st.pbd}</div><div class="l">Rekod UASA & PBD</div></div></div>
+        <div class="stat"><div class="ic">${icon('book')}</div><div><div class="v">${st.uasa + st.pbd}</div><div class="l">Rekod UASA, TCS & PBD</div></div></div>
         <div class="stat"><div class="ic">${icon('layers')}</div><div><div class="v">${Object.values(st.modul).reduce((a, b) => a + b, 0)}</div><div class="l">Rekod modul lain</div></div></div>
       </div>
       <div class="grid-2 section-gap">
@@ -2249,7 +2693,7 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
           </div>
           <div class="card-head" style="border-top:1px solid var(--line)"><h3>${icon('download')} Eksport ke Excel</h3></div>
           <div class="card-pad" style="display:flex;gap:8px;flex-wrap:wrap">
-            ${[['pelajar', 'Senarai Pelajar'], ['uasa', 'UASA & PBD'], ['bahasa', 'Kemahiran Berbahasa'], ['segak', 'SEGAK'], ['psiko', 'Psikometrik'], ['tcs', 'TCS']]
+            ${[['pelajar', 'Senarai Pelajar'], ['uasa', 'UASA / TCS & PBD'], ['bahasa', 'Kemahiran Berbahasa'], ['segak', 'SEGAK'], ['psiko', 'Psikometrik']]
               .map(([k, l]) => `<button class="btn" data-exp="${k}">${icon('download')} ${l}</button>`).join('')}
           </div>
         </div>
@@ -2341,9 +2785,9 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
       <div class="card-pad"><p style="margin-top:0">Akses ditentukan oleh tetapan perkongsian artifact ini di claude.ai (butang <b>Share</b>):</p>
       <ul style="margin:0;padding-left:18px;line-height:1.8">
         <li><b>Pemilik / Editor</b> = Pentadbir: akses penuh termasuk Psikometrik, tetapan, subjek dan pengurusan database.</li>
-        <li><b>Contributor</b> = Guru: pelajar, UASA/PBD, Kemahiran Berbahasa, SEGAK, TCS dan slip. Tidak boleh melihat Psikometrik.</li>
+        <li><b>Contributor</b> = Guru: pelajar, UASA/TCS, PBD, Kemahiran Berbahasa, SEGAK, Psikometrik dan slip.</li>
         <li><b>Viewer / Commenter</b> = Lihat sahaja.</li></ul>
-      <p class="small muted" style="margin-bottom:0">Data Psikometrik disimpan berasingan dan hanya boleh dibaca oleh Pemilik dan Editor.</p></div></div>`;
+      <p class="small muted" style="margin-bottom:0">Keputusan Psikometrik dibuka kepada semua pengguna, sama seperti modul lain.</p></div></div>`;
     if (!admin) { el.innerHTML = pageHead('Tetapan Sistem', 'Maklumat akses anda.') + akses; return; }
     el.innerHTML = pageHead('Tetapan Sistem', 'Maklumat sekolah, paparan slip, skala gred dan subjek.') + `
       <div class="grid-2">
@@ -2357,11 +2801,15 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
               <button class="btn btn-sm" id="st-logo-btn">${icon('upload')} Muat Naik Logo</button><button class="btn btn-sm btn-ghost" id="st-logo-rm">Guna logo Imtiaz (lalai)</button>
               <input type="file" id="st-logo-file" accept="image/*" class="hidden"></div>
               <span class="hint">PNG/JPG, kurang daripada 150KB.</span></div>
+            ${['ttd_pengetua:Tandatangan Pengetua:Dipaparkan di atas nama Pengetua pada semua slip.', 'cop_sekolah:Cop Rasmi Sekolah:Dipaparkan di sebelah nama Pengetua pada semua slip.'].map((x) => { const [k, l, h] = x.split(':'); return `<div class="field full"><label>${l}</label>
+              <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><div class="ttd-prev" id="pv-${k}">${s[k] ? `<img src="${esc(s[k])}" alt="">` : '<span class="muted small">Tiada</span>'}</div>
+              <button class="btn btn-sm" data-imgup="${k}">${icon('upload')} Muat Naik</button><button class="btn btn-sm btn-ghost" data-imgrm="${k}">Buang</button>
+              <input type="file" accept="image/*" class="hidden" id="fl-${k}"></div><span class="hint">${h} Gunakan PNG berlatar belakang lutsinar, kurang daripada 150KB.</span></div>`; }).join('')}
           </div></div>
         <div>
           <div class="card"><div class="card-head"><h3>Paparan Slip</h3></div>
             <div class="card-pad" style="display:flex;flex-direction:column;gap:14px">
-              ${chk('papar_psiko_slip', 'Sertakan slip Psikometrik', 'Hanya Pentadbir boleh melihat dan mencetak slip Psikometrik.')}
+              ${chk('papar_psiko_slip', 'Sertakan slip Psikometrik', 'Keputusan Psikometrik dipaparkan dalam slip dan semakan No. IC.')}
               ${chk('papar_kedudukan', 'Paparkan kedudukan dalam kelas & tingkatan', 'Dikira berdasarkan purata markah UASA.')}
             </div></div>
           <div class="card section-gap"><div class="card-head"><h3>Skala Gred UASA</h3></div>
@@ -2373,8 +2821,47 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
         </div>
       </div>
       <div class="savebar card section-gap" style="border-radius:var(--radius)"><span class="small muted">Simpan perubahan maklumat sekolah, paparan slip dan skala gred.</span><button class="btn btn-primary" id="st-save">${icon('save')} Simpan Tetapan</button></div>
+      <div class="card section-gap"><div class="card-head"><h3>Guru Kelas &amp; Tandatangan</h3><span class="badge">dipaparkan pada slip setiap kelas</span></div><div id="gk-list"></div></div>
       <div class="card section-gap"><div class="card-head"><h3>Senarai Subjek</h3><button class="btn btn-sm btn-primary" id="sb-add">${icon('plus')} Tambah Subjek</button></div><div id="sb-list"></div></div>
       ${akses}`;
+    const imgs = { ttd_pengetua: s.ttd_pengetua || '', cop_sekolah: s.cop_sekolah || '' };
+    const pvImg = (k) => { $('pv-' + k).innerHTML = imgs[k] ? `<img src="${esc(imgs[k])}" alt="">` : '<span class="muted small">Tiada</span>'; };
+    el.querySelectorAll('[data-imgup]').forEach((b) => { b.onclick = () => $('fl-' + b.dataset.imgup).click(); });
+    el.querySelectorAll('[data-imgrm]').forEach((b) => { b.onclick = () => { imgs[b.dataset.imgrm] = ''; pvImg(b.dataset.imgrm); }; });
+    Object.keys(imgs).forEach((k) => { $('fl-' + k).onchange = (e) => {
+      const f = e.target.files[0]; if (!f) return;
+      if (f.size > 150 * 1024) return toast('Saiz imej terlalu besar (maks 150KB).', 'err');
+      const rd = new FileReader(); rd.onload = () => { imgs[k] = rd.result; pvImg(k); }; rd.readAsDataURL(f);
+    }; });
+    const gkLoad = async () => {
+      const rows = await api('GET', '/api/guru-kelas');
+      $('gk-list').innerHTML = rows.length ? `<div class="table-wrap"><table class="tbl"><thead><tr><th>Kelas</th><th>Nama Guru Kelas</th><th>Tandatangan</th><th class="act"></th></tr></thead><tbody>
+        ${rows.map((r, i) => `<tr data-i="${i}"><td class="nowrap"><b>T${r.tingkatan} ${esc(r.kelas)}</b></td>
+          <td><input class="input w-l" data-gk="nama" value="${esc(r.nama)}" placeholder="(ikut data pelajar jika kosong)"></td>
+          <td><div class="ttd-prev" data-gk="prev">${r.ttd ? `<img src="${esc(r.ttd)}" alt="">` : '<span class="muted small">Tiada</span>'}</div></td>
+          <td class="act nowrap"><button class="btn btn-sm" data-gk="up">${icon('upload')} Muat Naik</button><button class="btn btn-sm btn-ghost" data-gk="rm">Buang</button><button class="btn btn-sm btn-primary" data-gk="save">${icon('save')} Simpan</button><input type="file" accept="image/*" class="hidden" data-gk="file"></td></tr>`).join('')}
+        </tbody></table></div>` : '<div class="empty">Tiada kelas.</div>';
+      const host = $('gk-list');
+      host.querySelectorAll('tr[data-i]').forEach((tr) => { tr._row = rows[tr.dataset.i]; tr._ttd = tr._row.ttd || ''; });
+      const prev = (tr) => { tr.querySelector('[data-gk="prev"]').innerHTML = tr._ttd ? `<img src="${esc(tr._ttd)}" alt="">` : '<span class="muted small">Tiada</span>'; };
+      host.onclick = async (e) => {
+        const b = e.target.closest('button[data-gk]'); if (!b) return;
+        const tr = b.closest('tr');
+        if (b.dataset.gk === 'up') tr.querySelector('[data-gk="file"]').click();
+        if (b.dataset.gk === 'rm') { tr._ttd = ''; prev(tr); }
+        if (b.dataset.gk === 'save') {
+          try { await api('PUT', '/api/guru-kelas', { tingkatan: tr._row.tingkatan, kelas: tr._row.kelas, nama: tr.querySelector('[data-gk="nama"]').value, ttd: tr._ttd }); toast(`Guru kelas T${tr._row.tingkatan} ${tr._row.kelas} disimpan.`, 'ok'); } catch (er) { fail(er); }
+        }
+      };
+      host.onchange = (e) => {
+        if (e.target.dataset.gk !== 'file') return;
+        const f = e.target.files[0]; if (!f) return;
+        if (f.size > 150 * 1024) return toast('Saiz imej terlalu besar (maks 150KB). Gunakan PNG berlatar belakang lutsinar.', 'err');
+        const tr = e.target.closest('tr'); const rd = new FileReader();
+        rd.onload = () => { tr._ttd = rd.result; prev(tr); }; rd.readAsDataURL(f);
+      };
+    };
+    gkLoad().catch(fail);
     let logo = s.logo || '';
     $('st-logo-btn').onclick = () => $('st-logo-file').click();
     $('st-logo-rm').onclick = () => { logo = ''; $('st-logo').innerHTML = crestHTML(''); };
@@ -2387,7 +2874,7 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
       rd.readAsDataURL(f);
     };
     const save = async () => {
-      const body = { logo };
+      const body = { logo, ...imgs };
       el.querySelectorAll('[data-set]').forEach((i) => { body[i.dataset.set] = i.type === 'checkbox' ? (i.checked ? '1' : '0') : i.value.trim(); });
       S.settings = await api('PUT', '/api/settings', body);
       applyBranding();
@@ -2468,8 +2955,10 @@ body{background:#eceef2;padding:12px 0}@media print{body{background:#fff;padding
   $('logout-btn').innerHTML = icon('logout');
   $('menu-btn').onclick = () => document.body.classList.toggle('nav-open');
   $('backdrop').onclick = () => document.body.classList.remove('nav-open');
-  $('logout-btn').remove();
-  boot();
+  if (window.__SEED_ENC) { $('logout-btn').remove(); boot(); } else {
+    $('logout-btn').onclick = () => { try { sessionStorage.removeItem('slip2026_admin_ok'); } catch (x) { /* abaikan */ } location.reload(); };
+    SlipGate(boot);
+  }
 })();
 
 </script>
